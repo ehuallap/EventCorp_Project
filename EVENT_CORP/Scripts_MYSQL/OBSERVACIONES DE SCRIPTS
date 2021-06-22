@@ -1,0 +1,4 @@
+------------OBSERVACIONES SCRIPT 1----------------------------
+ANTES DE INICIAR EL PRIMER SCRIPT, ES NECESARIO UTILIZAR EL COMANDO "CREATE SCHEMA `database_events` DEFAULT CHARACTER SET utf8 ;" PARA TENER LISTA LA BASE DE DATOS
+DONDE SE CREARÁ LA TABLA "list-events".
+-------------------FIN----------------------------------------
