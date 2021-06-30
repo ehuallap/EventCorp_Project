@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 
 from backend.models.task_events import TaskEvents
 
-task_blueprint = Blueprint('event_blueprint', __name__)
+event_blueprint = Blueprint('event_blueprint', __name__)
 
 model = TaskEvents()
 
