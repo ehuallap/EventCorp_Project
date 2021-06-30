@@ -5,9 +5,9 @@ from flask import jsonify
 
 from flask_cors import CORS, cross_origin
 
-from DataBase_Managment.backend.models.task_users import TaskUsers
+from backend.models.task_users import TaskUsers
 
-task_blueprint = Blueprint('user_blueprint', __name__)
+user_blueprint = Blueprint('user_blueprint', __name__)
 
 model = TaskUsers()
 
