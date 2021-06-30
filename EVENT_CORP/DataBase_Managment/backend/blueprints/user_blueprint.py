@@ -18,7 +18,6 @@ def create_user():
                                 request.json['email'], request.json['events_joined'])
     return jsonify(content)
 
-
 @user_blueprint.route('/user/get_user', methods=['POST'])
 @cross_origin()
 def get_user():
