@@ -1,4 +1,4 @@
-from DataBase_Managment.backend.connection.connection_pool import MySQLPool
+from backend.connection.connection_pool import MySQLPool
 
 class TaskEvents:
     def __init__(self):
