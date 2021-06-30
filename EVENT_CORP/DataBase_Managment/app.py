@@ -2,10 +2,10 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 from flask import render_template
-from flask_cors import CORS, cross_origin  # para que no genere errores de CORS al hacer peticiones
+from flask_cors import CORS, cross_origin
 
-from DataBase_Managment.backend.blueprints import event_blueprint
-from DataBase_Managment.backend.blueprints import user_blueprint
+from backend.blueprints.event_blueprint import event_blueprint
+from backend.blueprints.user_blueprint import user_blueprint
 
 app = Flask(__name__)
 
