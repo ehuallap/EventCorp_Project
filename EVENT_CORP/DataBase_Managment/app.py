@@ -1,28 +1,61 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
-from flask import render_template
+from flask import make_response
 from flask_cors import CORS, cross_origin
+from flask import session
+
+import jwt
+import requests
+from functools import wraps
+from datetime import datetime, timedelta
 
 from backend.blueprints.event_blueprint import event_blueprint
 from backend.blueprints.user_blueprint import user_blueprint
+from backend.models.task_users import TaskUsers
 
 app = Flask(__name__)
-
-# para que utilice vue compilado ( npm run build ). En la carpeta dist, esta lo compilado de vue
-# app = Flask(__name__,
-#            static_folder = "./frontend/dist/static",
-#            template_folder = "./frontend/dist")
 
 app.register_blueprint(event_blueprint)
 app.register_blueprint(user_blueprint)
 
+model = TaskUsers()
+
+app.config['SECRET_KEY'] = 'bad8ecc08f9a48bab63b81a3fb11404c'
+
+def token_required(func):
+    @wraps(func)
+    def decorated(*args, **kwargs):
+        token = request.args.get('token')
+        if not token:
+            return jsonify({'Alert!': 'No se encuentra el token de sesión'})
+        try:
+            payload = jwt.decode(token, app.config['SECRET_KEY'])
+        except:
+            return jsonify({'Alert!': 'Token invalida!'})
+    return decorated
+
+
+@app.route('/authorize', methods=['POST'])
+@cross_origin()
+def authorize():
+
+    credential = 'Erick'
+    if credential == 'Erick':
+        session['authorized'] = True
+        token = jwt.encode({
+            'user': credential,
+            'expiration': str(datetime.utcnow() + timedelta(200))
+        },
+            app.config['SECRET_KEY'])
+        return jsonify({'token': token.decode('utf-8')})
+    else:
+        return make_response('Unable to verify', 403,
+                             {'WWW-Authenticate': 'Basic realm:"Autorizacion Fallida'})
+
+
 cors = CORS(app)
 
-# @app.route('/', defaults={'path': ''})
-# @app.route('/<path:path>')
-# def dender_vue(path):
-#    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
