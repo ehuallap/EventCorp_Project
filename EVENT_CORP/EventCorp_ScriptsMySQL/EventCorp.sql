@@ -26,8 +26,8 @@ ALTER TABLE Users AUTO_INCREMENT = 1;
 CREATE TABLE IF NOT EXISTS Organizers(
 	OrganizerID INT AUTO_INCREMENT NOT NULL,
 	OrganizerName VARCHAR(500) NOT NULL,
-    	OrganizerDescription TEXT,
-    	PRIMARY KEY (OrganizerID)
+	OrganizerDescription TEXT,
+    PRIMARY KEY (OrganizerID)
 );
 ALTER TABLE Organizers AUTO_INCREMENT = 1;
 
