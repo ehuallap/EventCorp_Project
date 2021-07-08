@@ -23,12 +23,12 @@ def create_user():
 def get_user():
     return jsonify(model.get_user(int(request.json['id'])))
 
-@user_blueprint.route('/user/get_users', methods=['POST'])
+@user_blueprint.route('/user/get_users', methods=['GET'])
 @cross_origin()
 def get_users():
     return jsonify(model.get_users())
 
-@user_blueprint.route('/user/delete_user', methods=['POST'])
+@user_blueprint.route('/user/delete_user', methods=['DELETE'])
 @cross_origin()
 def delete_user():
     return jsonify(model.delete_user(int(request.json['id'])))

@@ -24,12 +24,12 @@ def create_event():
 def get_event():
     return jsonify(model.get_event(int(request.json['id'])))
 
-@event_blueprint.route('/event/get_events', methods=['POST'])
+@event_blueprint.route('/event/get_events', methods=['GET'])
 @cross_origin()
 def get_events():
     return jsonify(model.get_events())
 
-@event_blueprint.route('/event/delete_event', methods=['POST'])
+@event_blueprint.route('/event/delete_event', methods=['DELETE'])
 @cross_origin()
 def delete_task():
     return jsonify(model.delete_event(int(request.json['id'])))
