@@ -12,12 +12,16 @@ from datetime import datetime, timedelta
 
 from backend.blueprints.event_blueprint import event_blueprint
 from backend.blueprints.user_blueprint import user_blueprint
+from backend.blueprints.organizer_blueprint import organizer_blueprint
+from backend.blueprints.category_blueprint import category_blueprint
 from backend.models.task_users import TaskUsers
 
 app = Flask(__name__)
 
 app.register_blueprint(event_blueprint)
 app.register_blueprint(user_blueprint)
+app.register_blueprint(organizer_blueprint)
+app.register_blueprint(category_blueprint)
 
 model = TaskUsers()
 
