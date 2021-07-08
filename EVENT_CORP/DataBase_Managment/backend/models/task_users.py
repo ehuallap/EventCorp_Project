@@ -20,7 +20,7 @@ class TaskUsers:
 
     def get_user(self, id):
         params = {'id': id}
-        rv = self.mysql_pool.execute("SELECT * FROM users WHERE id=%(id)s", params)
+        rv = self.mysql_pool.execute("SELECT * FROM users WHERE UserID=%(id)s", params)
         data = []
         content = {}
         for result in rv:
