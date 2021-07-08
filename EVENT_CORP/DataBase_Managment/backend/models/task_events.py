@@ -22,7 +22,7 @@ class TaskEvents:
 
     def get_event(self, id):
         params = {'id': id}
-        rv = self.mysql_pool.execute("SELECT * FROM events WHERE id=%(id)s", params)
+        rv = self.mysql_pool.execute("SELECT * FROM events WHERE EventID=%(id)s", params)
         data = []
         content = {}
         for result in rv:
