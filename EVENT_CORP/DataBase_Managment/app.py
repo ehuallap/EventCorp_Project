@@ -5,8 +5,8 @@ from flask import make_response
 from flask_cors import CORS, cross_origin
 from flask import session
 
-import jwt
 import requests
+import jwt
 from functools import wraps
 from datetime import datetime, timedelta
 
@@ -14,6 +14,7 @@ from backend.blueprints.event_blueprint import event_blueprint
 from backend.blueprints.user_blueprint import user_blueprint
 from backend.blueprints.organizer_blueprint import organizer_blueprint
 from backend.blueprints.category_blueprint import category_blueprint
+
 from backend.models.task_users import TaskUsers
 
 app = Flask(__name__)
@@ -43,9 +44,8 @@ def token_required(func):
 @app.route('/authorize', methods=['POST'])
 @cross_origin()
 def authorize():
-
-    credential = 'Erick'
-    if credential == 'Erick':
+    credential = request.json['code']
+    if credential == 'codigodeadmin':
         session['authorized'] = True
         token = jwt.encode({
             'user': credential,
@@ -54,12 +54,11 @@ def authorize():
             app.config['SECRET_KEY'])
         return jsonify({'token': token.decode('utf-8')})
     else:
-        return make_response('Unable to verify', 403,
+        return make_response('No se ha podido verificar su credencial', 403,
                              {'WWW-Authenticate': 'Basic realm:"Autorizacion Fallida'})
 
 
 cors = CORS(app)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
