@@ -1,3 +1,4 @@
+# DEPENDENCIAS FLASK
 from flask import Flask
 from flask import request
 from flask import jsonify
@@ -5,11 +6,15 @@ from flask import make_response
 from flask_cors import CORS, cross_origin
 from flask import session
 
+# PETICIONES HTTP
 import requests
+# JSON WEB TOKEN FRAMEWORK
 import jwt
+# OTHER LIBRARIES
 from functools import wraps
 from datetime import datetime, timedelta
 
+# REGISTER PATHS OF BLUEPRINTS
 from backend.blueprints.event_blueprint import event_blueprint
 from backend.blueprints.user_blueprint import user_blueprint
 from backend.blueprints.organizer_blueprint import organizer_blueprint
@@ -17,6 +22,7 @@ from backend.blueprints.category_blueprint import category_blueprint
 from backend.security.manager_blueprint import manager_blueprint
 from backend.models.task_users import TaskUsers
 
+# MAIN APP
 app = Flask(__name__)
 
 app.register_blueprint(event_blueprint)
