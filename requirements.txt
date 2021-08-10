@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 requests>=2.26.0
 pyjwt>=2.1.0
 flask>=1.1.2
-=======
 requests>=2.26.0
 pyjwt>=2.1.0
 flask>=1.1.2
->>>>>>> 2c8e26371c1b6ba41bd4b21a0dce1463dd908c83
 mysql-connector-python>=8.0.26
