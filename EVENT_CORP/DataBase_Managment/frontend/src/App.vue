@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <bar-nav/>
+    <index/>
     <!-- Router -->
     <router-view/>
 
@@ -11,24 +12,25 @@
 import HelloWorld from './components/HelloWorld'
 import SecondExample from "./components/SecondExample"
 import BarNav from "./components/BarNav"
+import index from "./components/index"
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     SecondExample,
-    BarNav
+    BarNav,
+    index
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+  background-color: rgb(230, 230, 230);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 90px;
 }
 </style>

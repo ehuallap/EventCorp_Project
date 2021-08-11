@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img  class="logo-brand" src="../assets/largo.png" alt="logo">
+        <img  class="logo-brand" src="../assets/LogoPlanoWithout.png" alt="logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
