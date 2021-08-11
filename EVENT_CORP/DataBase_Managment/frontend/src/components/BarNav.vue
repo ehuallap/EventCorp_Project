@@ -16,13 +16,13 @@
             <a class="nav-link" href="/" id="Inicio">Inicio </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/example" id="Calendario">Calendario</a>
+            <a class="nav-link" href="/calendario" id="Calendario">Calendario</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" id="SobreNosotros">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="Contáctanos">Contáctanos</a>
+            <a class="nav-link" href="/example" id="Contáctanos">Contáctanos</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -58,7 +58,7 @@ export default {
 
   .navbar{ background-color:  rgb(230, 230, 230); min-height: 100px;}
 
-  .nav-link{ font-family: 'Poppins', sans-serif; color: black; font-size: 18px}
+  .nav-link{ font-family: 'Poppins', sans-serif, monospace; color: black; font-size: 17px}
   .nav-item{padding: 15px;}
 
   .nav-link:hover{ color: rgb(0, 0, 0);}
@@ -68,7 +68,7 @@ export default {
       padding-top: 20px;
   }
   #app {
-    margin-top: -75px;
+    margin-top: -62px;
     margin-bottom: 50px;
   }
 </style>
