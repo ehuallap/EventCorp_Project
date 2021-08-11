@@ -1,29 +1,23 @@
 <template>
   <div id="app">
+    <bar-nav/>
     <!-- Router -->
-    <nav>
-      <ul>
-        <li>
-          <router-link to='/'> Inicio </router-link>
-        </li>
-        <li>
-          <router-link to='/example'> Example </router-link>
-        </li>
-      </ul>
-    </nav>
-    <router-view></router-view>
+    <router-view/>
+
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
-import SecondExample from "./components/SecondExample";
+import SecondExample from "./components/SecondExample"
+import BarNav from "./components/BarNav"
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    SecondExample
+    SecondExample,
+    BarNav
   }
 }
 </script>
