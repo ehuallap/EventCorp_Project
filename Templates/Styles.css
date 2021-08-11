@@ -9,7 +9,7 @@ hr{ size: 2px;color: black;}
 .logo-brand{min-width: 180px; max-width: 190px;}
 
 .navbar{ background-color:  rgb(230, 230, 230); min-height: 100px;}
-.nav-link{ font-family: 'Poppins', sans-serif; color: black;}
+.nav-link{ color: black; font-family: "Rage Italic", cursive }
 .nav-item{padding: 15px;}
 .nav-link:hover{ color: rgb(0, 0, 0);}
 .navbar-toggler{ font-size: 35px;}

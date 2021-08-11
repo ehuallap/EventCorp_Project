@@ -2,7 +2,7 @@
   <div id="app">
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img  class="logo-brand" src="../assets/logoo.png" alt="logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -47,10 +47,24 @@ export default {
 </script>
 
 <style scoped>
-  img.logo-brand {
-    height: auto;
-    width: auto;
-    max-height: 300px;
-    max-width: 300px;
+  body{ font-family: 'Titillium Web', sans-serif; background-color: rgb(230, 230, 230); }
+
+  h1{ font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 595; line-height: 60px;}
+  h2{ font-family: 'Poppins', sans-serif; font-size: 25px; font-weight: 595; line-height: 60px;}
+  h5{ font-family: 'Poppins', sans-serif; font-size: auto; }
+  p{ font-size: 16px; font-weight: 400; }
+  hr{ size: 2px;color: black;}
+  .logo-brand{width: auto; height: auto; min-width: 280px; max-width: 300px;}
+
+  .navbar{ background-color:  rgb(230, 230, 230); min-height: 100px;}
+
+  .nav-link{ font-family: 'Poppins', sans-serif; color: black; font-size: 20px}
+  .nav-item{padding: 15px;}
+
+  .nav-link:hover{ color: rgb(0, 0, 0);}
+  .navbar-toggler{ font-size: 35px;}
+  .navbar-toggler:focus {outline: none;}
+  .container{
+      padding-top: 20px;
   }
 </style>
