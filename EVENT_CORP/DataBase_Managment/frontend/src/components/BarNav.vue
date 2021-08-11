@@ -58,7 +58,7 @@ export default {
 
   .navbar{ background-color:  rgb(230, 230, 230); min-height: 100px;}
 
-  .nav-link{ font-family: 'Poppins', sans-serif; color: black; font-size: 18px}
+  .nav-link{ font-family: 'Poppins', sans-serif, monospace; color: black; font-size: 18px}
   .nav-item{padding: 15px;}
 
   .nav-link:hover{ color: rgb(0, 0, 0);}
@@ -68,7 +68,7 @@ export default {
       padding-top: 20px;
   }
   #app {
-    margin-top: -75px;
+    margin-top: -70px;
     margin-bottom: 50px;
   }
 </style>
