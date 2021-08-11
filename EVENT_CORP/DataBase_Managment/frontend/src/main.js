@@ -3,11 +3,35 @@
 import Vue from 'vue'
 import App from './App'
 
-Vue.config.productionTip = false
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
 
-/* eslint-disable no-new */
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+// AQUI SE IMPORTAN LOS COMPONENTES PARA EL ROUTE (EJM ABOUT, CALENDAR, ETC)
+import HelloWorld from "./components/HelloWorld"
+import SecondExample from "./components/SecondExample"
+
+const router = new VueRouter({
+  mode: 'history',
+  base: __dirname,
+  // AQUI SE IMPLEMENTAN LAS RUTAS
+  routes: [
+    {
+      path: '/',
+      component: HelloWorld
+    },
+    {
+      path: '/example',
+      component: SecondExample
+    }
+  ]
+});
+
+Vue.config.productionTip = false
 new Vue({
-  el: '#app',
+  router,
   components: { App },
   template: '<App/>'
-})
+}).$mount('#app')
