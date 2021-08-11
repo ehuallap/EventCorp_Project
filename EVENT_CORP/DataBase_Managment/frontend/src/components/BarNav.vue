@@ -54,11 +54,11 @@ export default {
   h5{ font-family: 'Poppins', sans-serif; font-size: auto; }
   p{ font-size: 16px; font-weight: 400; }
   hr{ size: 2px;color: black;}
-  .logo-brand{width: auto; height: auto; min-width: 280px; max-width: 300px;}
+  .logo-brand{width: auto; height: auto; min-width: 250px; max-width: 260px;}
 
   .navbar{ background-color:  rgb(230, 230, 230); min-height: 100px;}
 
-  .nav-link{ font-family: 'Poppins', sans-serif; color: black; font-size: 17px}
+  .nav-link{ font-family: 'Poppins', sans-serif; color: black; font-size: 18px}
   .nav-item{padding: 15px;}
 
   .nav-link:hover{ color: rgb(0, 0, 0);}
