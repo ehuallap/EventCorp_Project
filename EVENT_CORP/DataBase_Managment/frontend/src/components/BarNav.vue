@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img  class="logo-brand" src="../assets/logoo.png" alt="logo">
+        <img  class="logo-brand" src="../assets/largo.png" alt="logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@ export default {
 
   .navbar{ background-color:  rgb(230, 230, 230); min-height: 100px;}
 
-  .nav-link{ font-family: 'Poppins', sans-serif; color: black; font-size: 20px}
+  .nav-link{ font-family: 'Poppins', sans-serif; color: black; font-size: 17px}
   .nav-item{padding: 15px;}
 
   .nav-link:hover{ color: rgb(0, 0, 0);}
@@ -66,5 +66,9 @@ export default {
   .navbar-toggler:focus {outline: none;}
   .container{
       padding-top: 20px;
+  }
+  #app {
+    margin-top: -75px;
+    margin-bottom: 50px;
   }
 </style>
