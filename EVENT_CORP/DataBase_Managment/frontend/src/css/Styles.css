@@ -1,0 +1,60 @@
+/*
+body{ font-family: 'Titillium Web', sans-serif; background-color: rgb(230, 230, 230); }
+h1{ font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 595; line-height: 60px;}
+h2{ font-family: 'Poppins', sans-serif; font-size: 25px; font-weight: 595; line-height: 60px;}
+h5{font-family: 'Poppins', sans-serif; font-size: auto;}
+p{font-size: 16px; font-weight: 400; }
+hr{ size: 2px;color: black;}
+.logo-brand{width: auto; height: auto; min-width: 250px; max-width: 260px;}
+
+.navbar{ background-color:  rgb(230, 230, 230); min-height: 100px;}
+.nav-link{ font-family: 'Poppins', sans-serif; color: black;}
+.nav-item{padding: 15px;}
+.nav-link:hover{ color: rgb(0, 0, 0);}
+.navbar-toggler{ font-size: 35px;}
+.navbar-toggler:focus {outline: none;}
+
+.mybtn{background-color: transparent; font-size: 45px; outline: none; border:none;}
+.mybtn:focus{ outline: none;}
+
+.container{
+    padding: 20px;
+}
+
+.content-center{text-align: center;max-width:  1000px;margin: 20px auto 20px auto; }
+
+.content-left{
+    max-width:  800px;
+    margin: 30px 30px 10px 30px;
+    text-align: left;
+}
+
+.content-centerAll {
+    vertical-align: middle;
+}
+
+.container-white{background: white;border-radius: 25px;}
+
+.list{padding: 30px 20px 20px;}
+.list-item {padding: 30px 20px 20px;list-style-type: none;}
+
+.list-link{font-family: 'Poppins', sans-serif;color: black;text-decoration: none;}
+.list-link:hover{color: black;}
+
+.Icon3D{
+    min-width: 120px; max-width: 310px;
+}
+
+.pcenter{
+    text-align: center;
+}
+
+.container-login{
+    max-width:  500px;
+    margin: 30px 30px 10px 30px;
+    text-align: left;
+}
+#app {
+    margin-top: -62px;
+    margin-bottom: 50px;
+}*/
