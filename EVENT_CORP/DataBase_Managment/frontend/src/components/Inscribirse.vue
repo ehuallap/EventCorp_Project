@@ -35,6 +35,12 @@
               </div>
             </div>
             <div class="col-md-12">
+              <h2>Contraseña:</h2>
+              <div class="form-group">
+                <input type=password class="form-control" id="Contraseña" placeholder="Contraseña">
+              </div>
+            </div>
+            <div class="col-md-12 mt-3">
               <button type="button" class="btn btn-primary">Registrarse</button>
             </div>
           </div>
