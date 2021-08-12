@@ -27,8 +27,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <button type="button" class="btn btn-outline-secondary" href="#" id="Ingresar">Ingresar</button>
-
+            <a class="btn btn-outline-secondary" href="/ingresar" role="button" id="Ingresar">Ingresar</a>
           </li>
           <li class="nav-item">
             <a class="btn btn-primary" href="#" role="button" id="Inscribirse">Inscribirse</a>
@@ -47,13 +46,6 @@ export default {
 </script>
 
 <style scoped>
-  body{ font-family: 'Titillium Web', sans-serif; background-color: rgb(230, 230, 230); }
-
-  h1{ font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 595; line-height: 60px;}
-  h2{ font-family: 'Poppins', sans-serif; font-size: 25px; font-weight: 595; line-height: 60px;}
-  h5{ font-family: 'Poppins', sans-serif; }
-  p{ font-size: 16px; font-weight: 400; }
-  hr{ size: 2px;color: black;}
   .logo-brand{width: auto; height: auto; min-width: 250px; max-width: 260px;}
 
   .navbar{ background-color:  rgb(230, 230, 230); min-height: 100px;}

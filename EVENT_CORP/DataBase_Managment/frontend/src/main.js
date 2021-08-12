@@ -20,6 +20,7 @@ import SecondExample from "./components/SecondExample"
 import Calendario from "./components/Calendario";
 import index from "./components/index";
 import Contactanos from "./components/Contactanos";
+import Ingresar from "./components/Ingresar";
 
 const router = new VueRouter({
   mode: 'history',
@@ -33,6 +34,10 @@ const router = new VueRouter({
     {
       path: '/contactanos',
       component: Contactanos
+    },
+    {
+      path: '/ingresar',
+      component: Ingresar
     },
     {
       path: '/example',
