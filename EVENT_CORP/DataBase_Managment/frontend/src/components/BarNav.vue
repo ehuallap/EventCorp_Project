@@ -19,7 +19,7 @@
             <a class="nav-link" href="/calendario" id="Calendario">Calendario</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="SobreNosotros">Sobre Nosotros</a>
+            <a class="nav-link" href="/sobrenosotros" id="SobreNosotros">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contactanos" id="Contáctanos">Contáctanos</a>
