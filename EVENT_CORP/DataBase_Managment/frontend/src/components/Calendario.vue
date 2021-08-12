@@ -12,6 +12,9 @@ export default {
 </script>
 
 <style scoped>
+  .content-center {
+    text-align: center;
+  }
   h1{
     font-family: 'Poppins', sans-serif;
     font-size: 50px; font-weight: 595;
