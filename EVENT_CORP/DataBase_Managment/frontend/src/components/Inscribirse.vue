@@ -2,7 +2,7 @@
   <section id="Inscribirse">
     <div class="container text-center">
       <div class="container-white">
-        <h1>¡Nos alegramos que hayas decidido unirte a nosotros!</h1>
+        <h2>¡Nos alegramos que hayas decidido unirte a nosotros!</h2>
       </div>
     </div>
     <div class="container">
