@@ -12,7 +12,7 @@
           <div class="col-md-5 col align-self-center">
             <ul class="list-inline">
               <li class="list-inline-item"><a class="list-link" href="#">Inicio</a></li>
-              <li class="list-inline-item"><a class="list-link" href="#">Calendario</a></li>
+              <li class="list-inline-item"><a class="list-link" href="/calendario">Calendario</a></li>
               <li class="list-inline-item"><a class="list-link" href="#">Sobre Nosotros</a></li>
               <li class="list-inline-item"><a class="list-link" href="#">Contáctanos</a></li>
             </ul>

@@ -5,13 +5,13 @@
       <a class="navbar-brand" href="/">
         <img  class="logo-brand" src="../assets/LogoPlanoWithout.png" alt="logo">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <ion-icon name="grid-outline"></ion-icon>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item active">
             <a class="nav-link" href="/" id="Inicio">Inicio </a>
           </li>
@@ -51,7 +51,7 @@ export default {
 
   h1{ font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 595; line-height: 60px;}
   h2{ font-family: 'Poppins', sans-serif; font-size: 25px; font-weight: 595; line-height: 60px;}
-  h5{ font-family: 'Poppins', sans-serif; font-size: auto; }
+  h5{ font-family: 'Poppins', sans-serif; }
   p{ font-size: 16px; font-weight: 400; }
   hr{ size: 2px;color: black;}
   .logo-brand{width: auto; height: auto; min-width: 250px; max-width: 260px;}
