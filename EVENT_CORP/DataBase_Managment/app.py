@@ -23,6 +23,13 @@ from backend.security.manager_blueprint import manager_blueprint
 from backend.models.task_users import TaskUsers
 
 # MAIN APP
+config = {
+    'support_credentials=True'
+    'ORIGINS': [
+        'http://localhost:8080',
+        'support_credentials=True'
+    ],
+}
 app = Flask(__name__)
 
 app.register_blueprint(event_blueprint)
@@ -80,7 +87,7 @@ def authorize():
         })
 
 
-cors = CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 if __name__ == "__main__":
     app.run(debug=True)
