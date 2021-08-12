@@ -21,13 +21,13 @@ export default {
                     <div class="col-md-5">
                         <div class="container">
                             <h2><b>Fecha y hora: </b></h2>
-                            <td></td>
+                            <td>21/12/2021 a las 15:40</td>
                             <h2><b>Modalidad: </b></h2>
-                            <td>EventDescription</td>
+                            <td>Virtual</td>
                             <h2><b>Acceso: </b></h2>
-                            <td>EventTitle</td>
+                            <td>Publico</td>
                             <h2><b>Organiza: </b></h2>
-                            <td>EventDateEnd</td>
+                            <td>Jorge Ruiz</td>
                             
                             <a class="btn btn-primary" href="/" role="button">Agregar a mi Calendario 
                             <ion-icon name="calendar-outline"></ion-icon>
