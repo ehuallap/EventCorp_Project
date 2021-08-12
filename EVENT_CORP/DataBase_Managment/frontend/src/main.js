@@ -19,6 +19,7 @@ Vue.use(BootstrapVue)
 import SecondExample from "./components/SecondExample"
 import Calendario from "./components/Calendario";
 import index from "./components/index";
+import Contactanos from "./components/Contactanos";
 
 const router = new VueRouter({
   mode: 'history',
@@ -28,6 +29,10 @@ const router = new VueRouter({
     {
       path: '/',
       component: index
+    },
+    {
+      path: '/contactanos',
+      component: Contactanos
     },
     {
       path: '/example',

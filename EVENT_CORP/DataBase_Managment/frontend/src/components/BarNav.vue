@@ -22,7 +22,7 @@
             <a class="nav-link" href="#" id="SobreNosotros">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/example" id="Contáctanos">Contáctanos</a>
+            <a class="nav-link" href="/contactanos" id="Contáctanos">Contáctanos</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
