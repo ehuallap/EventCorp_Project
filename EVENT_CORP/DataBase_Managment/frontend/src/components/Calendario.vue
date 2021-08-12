@@ -58,7 +58,6 @@
               </tr>
             </tbody>
             </table>
-
             <div class="container-white">
                 <div class="row">
                     <div class="col-md-6">
@@ -86,12 +85,25 @@ export default {
   name: "Calendario",
   data() {
     return {
-      eventos: []
+      eventos: [],
+      pos: 0
     }
   },
   created() {
     this.$http.get('http://127.0.0.1:5000/event/get_events')
     .then(res => this.eventos = res.body);
+  },
+  methods: {
+    aumentar() {
+      console.log("AUMENTANDO");
+      self.pos = self.pos + 1;
+    },
+    decrementar() {
+      self.pos = self.pos - 1;
+      if (self.pos < 1) {
+        self.pos = self.eventos.length - 1
+      }
+    }
   }
 }
 
@@ -103,11 +115,17 @@ export default {
   }
   .Icon3D{
     min-width: 120px; max-width: 310px;
+    margin-top: 20px;
   }
   .container-white{
     background: white;
     border-radius: 25px;
-    margin-top: 20px;
+    margin-top: 45px;
+  }
+  .card {
+    margin-top: 30px;
+    text-align: center;
+    align-self: center;
   }
   .content-center {
     text-align: center;
@@ -117,6 +135,7 @@ export default {
     text-align: left;
   }
   .d-block {
+    min-height: 100px;
     height: 750px;
     width: auto;
   }
