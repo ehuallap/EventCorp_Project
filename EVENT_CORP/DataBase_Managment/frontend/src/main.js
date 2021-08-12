@@ -16,13 +16,14 @@ Vue.use(BootstrapVue)
 
 // AQUI SE IMPORTAN LOS COMPONENTES PARA EL ROUTE (EJM ABOUT, CALENDAR, ETC)
 
-import SecondExample from "./components/SecondExample"
+import SecondExample from "./components/SecondExample";
 import Calendario from "./components/Calendario";
 import index from "./components/index";
 import SobreNosotros from "./components/SobreNosotros";
 import Contactanos from "./components/Contactanos";
 import Ingresar from "./components/Ingresar";
 import Eventos from "./components/Eventos";
+import Inscribirse from "./components/Inscribirse";
 
 const router = new VueRouter({
   mode: 'history',
@@ -56,6 +57,10 @@ const router = new VueRouter({
     {
       path: '/eventos',
       component: Eventos
+    },
+    {
+      path: '/inscribirse',
+      component: Inscribirse
     }
   ]
 });

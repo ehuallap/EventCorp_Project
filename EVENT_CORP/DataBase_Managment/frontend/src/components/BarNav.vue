@@ -30,7 +30,7 @@
             <a class="btn btn-outline-secondary" href="/ingresar" role="button" id="Ingresar">Ingresar</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-primary" href="#" role="button" id="Inscribirse">Inscribirse</a>
+            <a class="btn btn-primary" href="/inscribirse" role="button" id="Inscribirse">Inscribirse</a>
           </li>
         </ul>
       </div>
