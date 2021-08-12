@@ -3,7 +3,6 @@
     <bar-nav/>
     <index/>
     <!-- Router -->
-    <router-view/>
 
   </div>
 </template>
