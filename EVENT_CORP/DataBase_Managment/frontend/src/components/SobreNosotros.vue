@@ -12,7 +12,7 @@
                 <br>O tal vez nunca supiste como enterarte de los eventos cerca de ti?
                 <br>No te preocupes, estamos aqui para ayudarte :D</h5>
                 <div class="content-center">
-                  <img src="../assets/organizacion.jpg" class="Icon3D" alt="Logo">
+                  <img src="../assets/equipo.jpg" class="Icon3D" alt="Logo">
                 </div>
                 <br><hr><br>
                 <div class="row">
@@ -22,7 +22,7 @@
                     <div class="col-md-8">
                         <div class="content-center">
                             <div class="content-center">
-                                <img src="../assets/party2.jpg" class="Icon3D" alt="Logo">
+                                <img src="../assets/eventos.jpg" class="Icon3D" alt="Logo">
                             </div>
                         </div>
                     </div>
