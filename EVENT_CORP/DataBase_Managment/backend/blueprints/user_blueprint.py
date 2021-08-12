@@ -1,11 +1,9 @@
-from flask import Flask
 from flask import Blueprint
-from flask import request
 from flask import jsonify
+from flask import request
+from flask_cors import cross_origin
 
-from flask_cors import CORS, cross_origin
-
-from backend.models.task_users import TaskUsers
+from ..models.task_users import TaskUsers
 
 user_blueprint = Blueprint('user_blueprint', __name__)
 

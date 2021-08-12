@@ -2,7 +2,6 @@ from flask import Flask
 from flask import Blueprint
 from flask import request
 from flask import jsonify
-
 from flask_cors import CORS, cross_origin
 
 from backend.models.task_events import TaskEvents
