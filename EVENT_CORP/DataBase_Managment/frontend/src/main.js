@@ -18,6 +18,7 @@ Vue.use(BootstrapVue)
 import HelloWorld from "./components/HelloWorld"
 import SecondExample from "./components/SecondExample"
 import Calendario from "./components/Calendario";
+import index from "./components/index";
 
 const router = new VueRouter({
   mode: 'history',
@@ -26,7 +27,7 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: HelloWorld
+      component: index
     },
     {
       path: '/example',
