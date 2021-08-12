@@ -7,24 +7,24 @@
             <div class="content-left">
             <h1>No te pierdas ningun evento!</h1>
             <p>Consulta nuestro calendario con variados eventos, con información de acceso y más! Qué esperas?</p>
-            <a class="btn btn-primary" href="#" role="button">Inscribirse</a>
-            <button type="button" class="btn btn-outline-secondary" href="#">¿Cómo funciona?</button>
+            <a class="btn btn-primary" href="#¿ComoFunciona?" role="button">Inscribirse</a>
+            <a class="btn btn-outline-secondary" href="#¿ComoFunciona?">¿Cómo funciona?</a>
             </div>
           </div>
           <div class="col-md-6">
             <div class="content-center">
-              <img src="../assets/Logo.png" class="Icon3D" alt="Imagen Referencial">
+              <img src="../assets/inscribirse.png" style = "min-width: 200px; max-width: 900px;" alt="Imagen Referencial">
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container" id="¿ComoFunciona?">
       <div class="container-white">
         <div class="row">
           <div class="col-md-6 col align-self-center">
             <div class="content-center">
-              <img src="../assets/Logo.png" class="Icon3D" alt="Imagen Referencial">
+              <img src="../assets/img01.png" style = "min-width: 200px; max-width:500px;" alt="Imagen Referencial">
               <div class="content-left">
                 <br><h1>¿Cómo Funciona?</h1>
                 <h3>Por si tienes alguna duda . . . </h3>
@@ -57,17 +57,17 @@
     <div class="container">
       <div class="container-white">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="container">
                     <div class="content-left">
-                        <h1>Inscríbete y empieza a disfrutar</h1><br><br>
+                        <h1>Inscríbete y empieza a disfrutar</h1><br><br><br><br><br>
                         <a class="btn btn-primary" href="#" role="button">Inscribirse</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6  col align-self-center">
+            <div class="col-md-6 col align-self-center">
                 <div class="content-center">
-                    <img src="../assets/Logo.png" class="Icon3D" alt="Logo">
+                    <img src="../assets/img02.png" style = "min-width: 200px; max-width:800px;" alt="Logo">
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@ hr{ size: 2px;color: black;}
 .list-item {padding: 30px 20px 20px;list-style-type: none;}
 
 .Icon3D{
-    min-width: 120px; max-width: 310px;
+    min-width: 120px; max-width: 800px;
 }
 
 </style>
