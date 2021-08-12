@@ -61,7 +61,7 @@
                 <div class="container">
                     <div class="content-left">
                         <h1>Inscríbete y empieza a disfrutar</h1><br><br><br><br><br>
-                        <a class="btn btn-primary" href="#" role="button">Inscribirse</a>
+                        <a class="btn btn-primary" href="/eventos" role="button">Inscribirse</a>
                     </div>
                 </div>
             </div>
@@ -73,30 +73,18 @@
         </div>
     </div>
     </div>
-  <Footer/>
   </section>
 </template>
 
 <script>
-import Footer from './Footer'
 export default {
-  name: "index",
-  components:{
-     Footer
-  }
+  name: "index"
 }
 </script>
 
 <style scoped>
-body{ font-family: 'Titillium Web', sans-serif; background-color: rgb(230, 230, 230); }
-h1{ font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 595; line-height: 60px;}
-h2{ font-family: 'Poppins', sans-serif; font-size: 25px; font-weight: 595; line-height: 60px;}
-h5{font-family: 'Poppins', sans-serif;}
-p{font-size: 16px; font-weight: 400; }
-hr{ size: 2px;color: black;}
-
-.container{
-    padding: 20px;
+.container {
+  padding: 20px;
 }
 
 .content-center{text-align: center;max-width:  1000px;margin: 20px auto 20px auto; }
@@ -111,5 +99,4 @@ hr{ size: 2px;color: black;}
 
 .list{padding: 30px 20px 20px;}
 .list-item {padding: 30px 20px 20px;list-style-type: none;}
-
 </style>

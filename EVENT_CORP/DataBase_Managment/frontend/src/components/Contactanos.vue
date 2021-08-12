@@ -44,28 +44,16 @@
                 </div>
             </div>
         </div>
-    <Footer/>
   </section>
 </template>
 
 <script>
-import Footer from "./Footer";
 export default {
-  name: "Contactanos",
-  components:{
-     Footer
-  }
+  name: "Contactanos"
 }
 </script>
 
 <style scoped>
-body{ font-family: 'Titillium Web', sans-serif; background-color: rgb(230, 230, 230); }
-h1{ font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 595; line-height: 60px;}
-h2{ font-family: 'Poppins', sans-serif; font-size: 25px; font-weight: 595; line-height: 60px;}
-h5{font-family: 'Poppins', sans-serif; }
-p{font-size: 16px; font-weight: 400; }
-hr{ size: 2px;color: black;}
-
 .container{
     padding: 20px;
 }

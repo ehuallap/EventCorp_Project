@@ -21,6 +21,8 @@ import Calendario from "./components/Calendario";
 import index from "./components/index";
 import SobreNosotros from "./components/SobreNosotros";
 import Contactanos from "./components/Contactanos";
+import Ingresar from "./components/Ingresar";
+import Eventos from "./components/Eventos";
 
 const router = new VueRouter({
   mode: 'history',
@@ -36,6 +38,10 @@ const router = new VueRouter({
       component: Contactanos
     },
     {
+      path: '/ingresar',
+      component: Ingresar
+    },
+    {
       path: '/example',
       component: SecondExample
     },
@@ -46,6 +52,10 @@ const router = new VueRouter({
     {
       path: '/sobrenosotros',
       component: SobreNosotros
+    },
+    {
+      path: '/eventos',
+      component: Eventos
     }
   ]
 });
