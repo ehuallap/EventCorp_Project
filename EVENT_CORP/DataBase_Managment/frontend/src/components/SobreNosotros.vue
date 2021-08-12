@@ -1,9 +1,10 @@
 <template>
+<<<<<<< HEAD
   <div class="content-center">
     <h1>Sobre Nosotros</h1>
     <h5>Somos un grupo de estudiantes de la Universidad Nacional <br> de San Agustín de Arequipa.</h5>
     <div class="content-center">
-      <img src="../assets/pabellon.png" class="Icon3D" alt="Logo">
+      <img src="../assets/uni.png" class="Icon3D" alt="Logo">
     </div>
     <h1>Nuestra Misión</h1>
     <h5>Alguna vez no te enteraste de alguna actividad o evento cerca de ti?
@@ -11,7 +12,7 @@
       <br>O tal vez nunca supiste como enterarte de los eventos cerca de ti?
       <br>No te preocupes, estamos aqui para ayudarte :D</h5>
     <div class="content-center">
-      <img src="../assets/equipo.jpg" class="Icon3D" alt="Logo">
+      <img src="../assets/team.png" class="Icon3D" alt="Logo">
     </div>
     <br><hr><br>
     <div class="row">
@@ -21,7 +22,7 @@
       <div class="col-md-8">
         <div class="content-center">
           <div class="content-center">
-            <img src="../assets/eventos.jpg" class="Icon3D" alt="Logo">
+            <img src="../assets/party.png" class="Icon3D" alt="Logo">
           </div>
         </div>
       </div>
