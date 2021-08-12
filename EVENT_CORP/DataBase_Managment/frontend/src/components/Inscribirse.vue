@@ -2,7 +2,7 @@
   <section id="Inscribirse">
     <div class="container text-center">
       <div class="container-white">
-        <h1>¡Hola!</h1>
+        <h1>¡Nos alegramos que hayas decidido unirte a nosotros!</h1>
       </div>
     </div>
     <div class="container">
@@ -35,13 +35,13 @@
               </div>
             </div>
             <div class="col-md-12">
-              <br><a href="/inscribirse" class="btn btn-primary">Inscribirse</a>
+              <button type="button" class="btn btn-primary">Registrarse</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </section>
+  </section>
 </template>
 
 <script>
@@ -51,5 +51,23 @@ export default {
 </script>
 
 <style scoped>
+
+.col-md-12 {
+  text-align: left;
+}
+.container {
+  padding: 20px;
+}
+
+.content-center {
+  text-align: center;
+  max-width: 1000px;
+  margin: 20px auto 20px auto;
+}
+
+.container-white {
+  background: white;
+  border-radius: 25px;
+}
 
 </style>
