@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div class="content-center">
     <h1>Sobre Nosotros</h1>
     <h5>Somos un grupo de estudiantes de la Universidad Nacional <br> de San Agustín de Arequipa.</h5>

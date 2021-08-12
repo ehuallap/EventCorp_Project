@@ -7,7 +7,7 @@
             <div class="content-left">
             <h1>No te pierdas ningun evento!</h1>
             <p>Consulta nuestro calendario con variados eventos, con información de acceso y más! Qué esperas?</p>
-            <a class="btn btn-primary" href="#" role="button">Inscribirse</a>
+            <a class="btn btn-primary" href="/inscribirse" role="button">Inscribirse</a>
             <a class="btn btn-outline-secondary" href="#¿ComoFunciona?">¿Cómo funciona?</a>
             </div>
           </div>
@@ -29,7 +29,7 @@
                 <br><h1>¿Cómo Funciona?</h1>
                 <h3>Por si tienes alguna duda . . . </h3>
                 <br>
-                <a class="btn btn-primary" href="#" role="button">Inscribirse</a>
+                <a class="btn btn-primary" href="/inscribirse" role="button">Inscribirse</a>
               </div>
             </div>
           </div>

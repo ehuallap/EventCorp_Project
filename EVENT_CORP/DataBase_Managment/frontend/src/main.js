@@ -23,6 +23,7 @@ import SobreNosotros from "./components/SobreNosotros";
 import Contactanos from "./components/Contactanos";
 import Ingresar from "./components/Ingresar";
 import Eventos from "./components/Eventos";
+import Inscribirse from "./components/Inscribirse";
 
 const router = new VueRouter({
   mode: 'history',
@@ -40,6 +41,10 @@ const router = new VueRouter({
     {
       path: '/ingresar',
       component: Ingresar
+    },
+    {
+      path: '/inscribirse',
+      component: Inscribirse
     },
     {
       path: '/example',
