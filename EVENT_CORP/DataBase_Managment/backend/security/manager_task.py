@@ -4,22 +4,25 @@ class TaskManager:
     def __init__(self):
         self.mysql_pool = MySQLPool()
 
-    def verify_manager(self, password):
+    def verify_manager(self, password, user):
         authorization = '??'
-        params = {'password': password}
+        params = {
+            'user': user,
+            'password': password
+        }
         data = []
         content = {}
 
-        rv = self.mysql_pool.execute("SELECT * FROM managers WHERE ManagerPassword=%(password)s", params)
+        rv = self.mysql_pool.execute("SELECT * FROM managers WHERE ManagerName=%(user)s AND ManagerPassword=%(password)s", params)
         if rv:
             for result in rv:
                 authorization = 'Ha sido autorizado'
-                content = {'ID': result[0], 'Name': result[1], 'Authorization': authorization}
+                content = {'Auth': authorization}
                 data.append(content)
                 content = {}
         else:
             authorization = 'No ha sido autorizado'
-            content = {'ID': 'No encontrado', 'Name': 'No encontrado', 'Authorization': authorization}
+            content = {'Auth': authorization}
             data.append(content)
             content = {}
         return data

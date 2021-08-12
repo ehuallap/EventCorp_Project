@@ -4,7 +4,7 @@ from flask import request
 from flask import jsonify
 from flask_cors import CORS, cross_origin
 
-from backend.models.task_events import TaskEvents
+from ..models.task_events import TaskEvents
 
 event_blueprint = Blueprint('event_blueprint', __name__)
 
@@ -23,7 +23,9 @@ def create_event():
 def get_event():
     return jsonify(model.get_event(int(request.json['id'])))
 
+from app import token_required
 @event_blueprint.route('/event/get_events', methods=['GET'])
+# @token_required
 @cross_origin()
 def get_events():
     return jsonify(model.get_events())

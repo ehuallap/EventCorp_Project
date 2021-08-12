@@ -11,5 +11,5 @@ model = TaskManager()
 @manager_blueprint.route('/manager/verify', methods=['POST'])
 @cross_origin()
 def delete_user():
-    content = model.verify_manager(request.json['password'])
+    content = model.verify_manager(request.json['password'], request.json['user'])
     return jsonify(content)

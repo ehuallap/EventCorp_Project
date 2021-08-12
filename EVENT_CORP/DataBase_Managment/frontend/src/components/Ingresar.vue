@@ -17,7 +17,7 @@
                         <div class="col-md-12">
                             <h2>Dirección de correo electrónico: </h2>
                             <div class="form-group">
-                                <input type=text class="form-control" id="Email" placeholder="Dirección de corro electrónico" v-model="usuarioNuevo.email"><br>
+                                <input type=text class="form-control" id="Email" placeholder="Nombre de usuario" v-model="usuarioNuevo.user"><br>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -43,7 +43,7 @@ export default {
     return {
       usuarioNuevo: {
         password: "",
-        email: ""
+        user: ""
       },
       token: {}
     }
@@ -64,7 +64,8 @@ export default {
             redirect: 'follow', // manual, *follow, error
             referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
             body: JSON.stringify({
-              password: this.usuarioNuevo['password'].toString()
+              password: this.usuarioNuevo['password'].toString(),
+              user: this.usuarioNuevo['user'].toString()
             })
             })
           const array = await this.token.json()
