@@ -64,10 +64,15 @@ def authorize():
             'expiration': str(datetime.utcnow() + timedelta(200))
         },
             app.config['SECRET_KEY'])
-        return jsonify({'token': token})
+        return jsonify({
+            'code': 'A',
+            'token': token
+        })
     else:
-        return make_response('No se ha podido verificar su credencial', 403,
-                             {'WWW-Authenticate': 'Basic realm:"Autorizacion Fallida'})
+        return jsonify({
+            'code': 'U',
+            'token': ''
+        })
 
 
 cors = CORS(app)

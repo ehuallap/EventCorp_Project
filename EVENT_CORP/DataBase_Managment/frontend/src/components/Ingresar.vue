@@ -50,6 +50,7 @@ export default {
   },
   methods: {
     async ingresar() {
+
           // Opciones por defecto estan marcadas con un *
           this.token = await fetch('http://127.0.0.1:5000/authorize', {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -67,7 +68,12 @@ export default {
             })
             })
           const array = await this.token.json()
-          console.log(array['token']);
+          console.log(array['token'])
+          console.log(array['code'])
+          if ( array['code'] === "A") {
+            localStorage.setItem('token', array['token']);
+            await this.$router.push("/calendario")
+          }
         }
   }
 }
