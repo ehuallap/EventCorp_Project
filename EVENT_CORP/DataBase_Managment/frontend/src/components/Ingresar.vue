@@ -23,7 +23,7 @@
                         <div class="col-md-12">
                             <h2>Contraseña:</h2>
                             <div class="form-group">
-                                <input type=text class="form-control" id="Contraseña" placeholder="Contraseña" v-model="usuarioNuevo.password">
+                                <input type=password class="form-control" id="Contraseña" placeholder="Contraseña" v-model="usuarioNuevo.password">
                             </div>
                         </div>
                         <div class="col-md-12">
