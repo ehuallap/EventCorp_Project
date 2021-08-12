@@ -2,21 +2,15 @@
   <div id="app">
     <bar-nav/>
     <router-view/>
-    <!-- Router -->
-
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-import SecondExample from "./components/SecondExample"
 import BarNav from "./components/BarNav"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    SecondExample,
     BarNav
   }
 }
