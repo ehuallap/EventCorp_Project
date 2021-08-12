@@ -27,33 +27,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   margin-top: 90px;
 }
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 50px;
-  font-weight: 595;
-  line-height: 60px;
-}
-
-h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 25px;
-  font-weight: 595;
-  line-height: 60px;
-}
-
-h5 {
-  font-family: 'Poppins', sans-serif;
-  font-size: auto;
-}
-
-p {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-hr {
-  size: 2px;
-  color: black;
-}
-
+h1 {font-family: 'Poppins', sans-serif;font-size: 50px;font-weight: 595;line-height: 60px;}
+h2 {font-family: 'Poppins', sans-serif;font-size: 25px;font-weight: 595;line-height: 60px;}
+h5 {font-family: 'Poppins', sans-serif;}
+p {font-size: 16px;font-weight: 400;}
+hr {size: 2px;color: black;}
 </style>
