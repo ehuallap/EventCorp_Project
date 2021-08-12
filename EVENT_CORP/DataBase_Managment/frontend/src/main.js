@@ -15,7 +15,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css"
 Vue.use(BootstrapVue)
 
 // AQUI SE IMPORTAN LOS COMPONENTES PARA EL ROUTE (EJM ABOUT, CALENDAR, ETC)
-import HelloWorld from "./components/HelloWorld"
+
 import SecondExample from "./components/SecondExample"
 import Calendario from "./components/Calendario";
 import index from "./components/index";
