@@ -11,6 +11,7 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -22,6 +23,9 @@
                 <div class="carousel-item">
                   <img src="../assets/evento3.jpg" class="d-block w-100" alt="...">
                 </div>
+                <div class="carousel-item">
+                  <img src="../assets/evento4.jpg" class="d-block w-100" alt="...">
+                </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,6 +36,29 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
+            <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID del Evento</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Descripción del evento</th>
+                <th scope="col">Fecha de inicio</th>
+                <th scope="col">Fecha de culminación</th>
+                <th scope="col">Suscriptores</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in eventos" :key="item.id">
+                <th scope="row">{{item.ID}}</th>
+                <td>{{item.Title}}</td>
+                <td>{{item.Description}}</td>
+                <td>{{item.Starts}}</td>
+                <td>{{item.Ends}}</td>
+                <td>{{item.Subscribers}}</td>
+              </tr>
+            </tbody>
+            </table>
+
             <div class="container-white">
                 <div class="row">
                     <div class="col-md-6">
@@ -56,8 +83,18 @@
 
 <script>
 export default {
-  name: "Calendario"
+  name: "Calendario",
+  data() {
+    return {
+      eventos: []
+    }
+  },
+  created() {
+    this.$http.get('http://127.0.0.1:5000/event/get_events')
+    .then(res => this.eventos = res.body);
+  }
 }
+
 </script>
 
 <style scoped>
@@ -65,17 +102,26 @@ export default {
     padding: 50px;
   }
   .Icon3D{
-      min-width: 120px; max-width: 310px;
+    min-width: 120px; max-width: 310px;
   }
   .container-white{
-    background: white;border-radius: 25px;
+    background: white;
+    border-radius: 25px;
     margin-top: 20px;
   }
   .content-center {
     text-align: center;
+    margin-bottom: 25px;
   }
   .content-left {
     text-align: left;
+  }
+  .d-block {
+    height: 750px;
+    width: auto;
+  }
+  .table {
+    margin-top: 50px;
   }
   h1{
     font-family: 'Poppins', sans-serif;

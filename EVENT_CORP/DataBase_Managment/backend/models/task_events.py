@@ -17,7 +17,7 @@ class TaskEvents:
         cursor = self.mysql_pool.execute(query, params, commit=True)
 
         data = {'ID': cursor.lastrowid, 'Title': title, 'Description': description,
-                'Date starts at': date_start, 'Date ends at': date_end, 'Subscribers': subscribers}
+                'Starts': date_start, 'Ends': date_end, 'Subscribers': subscribers}
         return data
 
     def get_event(self, id):
@@ -27,7 +27,7 @@ class TaskEvents:
         content = {}
         for result in rv:
             content = {'ID': result[0], 'Title': result[1], 'Description': result[2],
-                       'Date starts at': result[3], 'Date ends at': result[4], 'Subscribers': result[5]}
+                       'Starts': result[3], 'Ends': result[4], 'Subscribers': result[5]}
             data.append(content)
             content = {}
         return data
@@ -38,7 +38,7 @@ class TaskEvents:
         content = {}
         for result in rv:
             content = {'ID': result[0], 'Title': result[1], 'Description': result[2],
-                       'Date starts at': result[3], 'Date ends at': result[4], 'Subscribers': result[5]}
+                       'Starts': result[3], 'Ends': result[4], 'Subscribers': result[5]}
             data.append(content)
             content = {}
         return data

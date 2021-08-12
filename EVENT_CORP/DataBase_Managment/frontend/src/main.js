@@ -19,6 +19,7 @@ Vue.use(BootstrapVue)
 import SecondExample from "./components/SecondExample"
 import Calendario from "./components/Calendario";
 import index from "./components/index";
+import SobreNosotros from "./components/SobreNosotros";
 import Contactanos from "./components/Contactanos";
 import Ingresar from "./components/Ingresar";
 
@@ -46,6 +47,10 @@ const router = new VueRouter({
     {
       path: '/calendario',
       component: Calendario
+    },
+    {
+      path: '/sobrenosotros',
+      component: SobreNosotros
     }
   ]
 });
