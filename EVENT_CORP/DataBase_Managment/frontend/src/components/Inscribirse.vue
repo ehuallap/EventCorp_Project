@@ -1,8 +1,8 @@
 <template>
-  <section id="Ingresar">
+  <section id="Inscribirse">
     <div class="container text-center">
       <div class="container-white">
-        <h1>¡Nos alegramos que hayas decidido unirte a nosotros!</h1>
+        <h2>¡Nos alegramos que hayas decidido unirte a nosotros!</h2>
       </div>
     </div>
     <div class="container">
@@ -13,33 +13,30 @@
           </div>
         </div>
         <div class="col-md-5 topmargin-sm">
-
           <div class="row">
             <div class="col-md-12">
-              <h2>Primer Nombre: </h2>
+              <h2>Nombre Completo:</h2>
+            </div>
+            <div class="col-md-6">
               <div class="form-group">
-                <input type=text class="form-control" id="Nombre" placeholder="Nombre"><br>
+                <input type=text class="form-control" id="Nombre" placeholder="Nombre">
               </div>
             </div>
-
-            <div class="col-md-12">
-              <h2>Primer Apellido:</h2>
+            <div class="col-md-6">
               <div class="form-group">
                 <input type=text class="form-control" id="Apellido" placeholder="Apellido">
               </div>
             </div>
-
             <div class="col-md-12">
               <h2>Email:</h2>
               <div class="form-group">
-                <input type=text class="form-control" id="Email" placeholder="Email">
+                <input type=text class="form-control" id="Email"
+                       placeholder="Dirección de correo electrónico">
               </div>
             </div>
-
             <div class="col-md-12">
               <button type="button" class="btn btn-primary">Registrarse</button>
             </div>
-
           </div>
         </div>
       </div>
@@ -49,11 +46,12 @@
 
 <script>
 export default {
-  name: "Ingresar"
+  name: "Inscribirse"
 }
 </script>
 
 <style scoped>
+
 .col-md-12 {
   text-align: left;
 }
@@ -71,4 +69,5 @@ export default {
   background: white;
   border-radius: 25px;
 }
+
 </style>

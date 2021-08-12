@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="content-left">
                         <h1>Inscríbete y empieza a disfrutar</h1><br><br><br><br><br>
-                        <a class="btn btn-primary" href="/eventos" role="button">Inscribirse</a>
+                        <a class="btn btn-primary" href="/inscribirse" role="button">Inscribirse</a>
                     </div>
                 </div>
             </div>

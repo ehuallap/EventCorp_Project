@@ -43,6 +43,10 @@ const router = new VueRouter({
       component: Ingresar
     },
     {
+      path: '/inscribirse',
+      component: Inscribirse
+    },
+    {
       path: '/example',
       component: SecondExample
     },
