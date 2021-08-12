@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <bar-nav/>
-    <index/>
     <!-- Router -->
 
   </div>
@@ -11,15 +10,13 @@
 import HelloWorld from './components/HelloWorld'
 import SecondExample from "./components/SecondExample"
 import BarNav from "./components/BarNav"
-import index from "./components/index"
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     SecondExample,
-    BarNav,
-    index
+    BarNav
   }
 }
 </script>
