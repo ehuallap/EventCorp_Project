@@ -26,7 +26,7 @@
                                 <input type=password class="form-control" id="Contraseña" placeholder="Contraseña" v-model="usuarioNuevo.password">
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 mt-5">
                             <button type="button" class="btn btn-primary" @click="ingresar">Ingresar</button>
                         </div>
                     </div>
