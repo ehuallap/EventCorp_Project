@@ -58,31 +58,20 @@
               </tr>
             </tbody>
             </table>
-            <div class="container-white">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="container">
-                            <div class="content-left">
-                                <h1>Inscríbete y empieza a disfrutar</h1><br><br>
-                                <a class="btn btn-primary" href="#" role="button">Inscribirse</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col align-self-center">
-                        <div class="content-center">
-                            <img src="../assets/Logo.png" class="Icon3D" alt="Logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+      <container-ins/>
     </section>
   </div>
 </template>
 
 <script>
+import containerIns from "./container-inscribete";
+
 export default {
   name: "Calendario",
+  components: {
+    containerIns
+  },
   data() {
     return {
       eventos: [],
