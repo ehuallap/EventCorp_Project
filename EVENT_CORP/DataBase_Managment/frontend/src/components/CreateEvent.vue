@@ -68,8 +68,8 @@ export default {
         'date_start': '',
         'date_end': '',
         'subscribers': '0',
-        'categoryId': '',
-        'organizerId': ''
+	      'category_name': '',
+	      'organizer_name': ''
       },
       result: ''
     }
@@ -94,8 +94,8 @@ export default {
           date_start: this.nuevoEvento['date_start'].toString(),
           date_end: this.nuevoEvento['date_end'].toString(),
           subscribers: this.nuevoEvento['subscribers'].toString(),
-          categoryId: this.nuevoEvento['categoryId'].toString(),
-          organizerId: this.nuevoEvento['organizerId'].toString()
+          categoryId: this.nuevoEvento['category_name'].toString(),
+          organizerId: this.nuevoEvento['organizer_name'].toString()
         })
       })
       const array = await this.result.json()
