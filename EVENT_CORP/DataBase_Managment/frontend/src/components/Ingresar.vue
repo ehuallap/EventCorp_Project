@@ -27,8 +27,11 @@
                             </div>
                         </div>
                         <div class="col-md-12 mt-5">
-                            <button type="button" class="btn btn-primary" @click="ingresar" v-on:click="show = !show">Ingresar</button>
+                            <button type="button" class="btn btn-primary" @click="ingresarUser" v-on:click="show = !show">Ingresar como usuario</button>
                         </div>
+                        <!--<div class="col-md-12 mt-5">
+                            <button type="button" class="btn btn-primary" @click="ingresarManager" v-on:click="show = !show">Ingresar como manager</button>
+                        </div> -->
                         <div>
                          <transition name="bounce">
                             <p v-if="show"> Contraseña o Usuario Incorrecto </p>
@@ -58,7 +61,7 @@ export default {
     pass() {
       this.show = !this.show
     },
-    async ingresar() {
+    async ingresarUser() {
       // Opciones por defecto estan marcadas con un *
       this.token = await fetch('http://127.0.0.1:5000/authorize', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
