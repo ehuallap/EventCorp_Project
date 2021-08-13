@@ -50,7 +50,12 @@
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <br><a class="btn btn-primary" @click="crear">Crear</a>
+                      <br><a class="btn btn-primary" @click="crear" v-on:click="show = !show">Crear</a>
+                    </div>
+                    <div>
+                      <transition name="bounce">
+                        <p v-if="show"> Completa todos los datos por favor! </p>
+                      </transition>
                     </div>
                   </div>
                 </div>
@@ -80,7 +85,8 @@ export default {
       },
       result: '',
       categories_list: '',
-      organizers_list: ''
+      organizers_list: '',
+      show: false
     }
   },
   created() {
@@ -90,6 +96,9 @@ export default {
       .then(res => this.organizers_list = res.body);
   },
   methods: {
+    pass() {
+      this.show = !this.show
+    },
     categories() {
       console.log(this.categories_list)
     },
@@ -97,34 +106,34 @@ export default {
       console.log(this.nuevoEvento.organizer_name)
     },
     async crear() {
-      // Opciones por defecto estan marcadas con un *
-      this.result = await fetch('http://127.0.0.1:5000/event/create_event', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify({
-          title: this.nuevoEvento['title'].toString(),
-          description: this.nuevoEvento['description'].toString(),
-          date_start: this.nuevoEvento['date_start'].toString(),
-          date_end: this.nuevoEvento['date_end'].toString(),
-          subscribers: this.nuevoEvento['subscribers'].toString(),
-          category_name: this.nuevoEvento['category_name'].toString(),
-          organizer_name: this.nuevoEvento['organizer_name'].toString()
+      if (this.nuevoEvento.title !== '' && this.nuevoEvento.description !== '' && this.nuevoEvento.date_start !== '' && this.nuevoEvento.date_end !== '' && this.nuevoEvento.category_name !== '' && this.nuevoEvento.organizer_name !== '') {
+        // Opciones por defecto estan marcadas con un *
+        this.result = await fetch('http://127.0.0.1:5000/event/create_event', {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, *cors, same-origin
+          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: 'same-origin', // include, *same-origin, omit
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json'
+          },
+          redirect: 'follow', // manual, *follow, error
+          referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify({
+            title: this.nuevoEvento['title'].toString(),
+            description: this.nuevoEvento['description'].toString(),
+            date_start: this.nuevoEvento['date_start'].toString(),
+            date_end: this.nuevoEvento['date_end'].toString(),
+            subscribers: this.nuevoEvento['subscribers'].toString(),
+            category_name: this.nuevoEvento['category_name'].toString(),
+            organizer_name: this.nuevoEvento['organizer_name'].toString()
+          })
         })
-      })
-      const array = await this.result.json()
-      console.log(array)
-      if ( array ) {
+        const array = await this.result.json()
+        console.log(array)
         await this.$router.push("/calendario")
       } else {
-        console.log("No redirecciona")
+        setTimeout(this.pass,1500);
       }
     }
   }
@@ -132,5 +141,21 @@ export default {
 </script>
 
 <style scoped>
-
+    .bounce-enter-active {
+      animation: bounce-in .5s;
+    }
+    .bounce-leave-active {
+      animation: bounce-in .5s reverse;
+    }
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
 </style>
