@@ -32,13 +32,13 @@ def get_event():
 @event_blueprint.route('/event/get_event_category/', methods=['POST'])
 @cross_origin()
 def get_event_category():
-    return jsonify(model.get_event_category(request.json('CategoryName')))
+    return jsonify(model.get_event_category(request.json['CategoryName']))
 
 
 @event_blueprint.route('/event/get_event_organizer/', methods=['POST'])
 @cross_origin()
 def get_event_organizer():
-    return jsonify(model.get_event_organizer(request.json('OrganizerName')))
+    return jsonify(model.get_event_organizer(request.json['OrganizerName']))
 
 
 @event_blueprint.route('/event/get_events', methods=['GET'])
