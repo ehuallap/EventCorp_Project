@@ -37,25 +37,19 @@
 </template>
 
 <script>
-import HelloWorld from "./HelloWorld";
+import axios  from 'axios'
 export default {
   name: "Eventos",
-  components: {HelloWorld},
   data(){
     return {
-      showEvent: false,
       destinationId: this.$route.params.id,
       evento: [],
       pos: 0
     }
   },
   created() {
-    var axios = require('axios')
-    axios.post('http://127.0.0.1:5000/event/get_event/',  {'id': this.destinationId})
-      .then(function(response){
-        console.log("HOLA")
-        this.evento = response.data;
-    });
+    this.$http.post('http://127.0.0.1:5000/event/get_event', {'id': this.destinationId})
+    .then(res => this.evento = res.body);
   },
   methods: {
     pass() {

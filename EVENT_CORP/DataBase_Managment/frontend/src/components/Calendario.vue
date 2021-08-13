@@ -18,7 +18,7 @@
                     <div class="col-md-1 mt-3 ml-4">
                     </div>
                     <div class="col-md-2 justify-content-center mt-auto mb-auto">
-                        <a class="btn btn-primary" :href="'/eventos/'+ item.ID" id="INFO">Más información</a>
+                        <a class="btn btn-primary" :href="'/evento/'+ item.ID" id="INFO">Más información</a>
                     </div>
                   </div>
                 </div>
@@ -43,20 +43,9 @@ export default {
       pos: 0
     }
   },
-
   created() {
-    var axios = require('axios')
-    var config = {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-        'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdGF0ZSI6IkhhIHNpZG8gYXV0b3JpemFkbyIsImV4cGlyYXRpb24iOiIyMDc2LTA1LTE2IDE0OjQ2OjUxLjUxOTk4OSJ9.qQDo-MdQDlRgBMF-wCubqJOplW87rvRxNcqRuu4IxKg'
-      }
-    };
-    axios.get('http://127.0.0.1:5000/event/get_events', config)
-    .then(function (res){
-      console.log(res)
-    })
+    this.$http.get('http://127.0.0.1:5000/event/get_events')
+    .then(res => this.eventos = res.body);
   },
   methods: {
   }
