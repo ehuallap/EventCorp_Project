@@ -32,14 +32,22 @@
                     </div>
                     <div class="col-md-6">
                       <h2>Organizador:</h2>
+
                       <div class="form-group">
-                        <input type=text class="form-control" id="Organizer" placeholder="Organizador" v-model="nuevoEvento.organizerId">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Organizadores</option>
+                          <option v-for="item in organizers_list" :key="item.id" value="${item.Name}" v-model="nuevoEvento.organizerId"> {{item.Name}} </option>
+                        </select>
                       </div>
+
                     </div>
                     <div class="col-md-6">
                       <h2>Categoria:</h2>
                       <div class="form-group">
-                        <input type=text class="form-control" id="Category" placeholder="Categoria" v-model="nuevoEvento.categoryId">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Categorías</option>
+                          <option v-for="item in categories_list" :key="item.id" value="${item.Name}" v-model="nuevoEvento.categoryId"> {{item.Name}} </option>
+                        </select>
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -71,10 +79,24 @@ export default {
         'categoryId': '',
         'organizerId': ''
       },
-      result: ''
+      result: '',
+      categories_list: '',
+      organizers_list: ''
     }
   },
+  created() {
+    this.$http.get('http://127.0.0.1:5000/category/get_categories')
+      .then(res => this.categories_list = res.body);
+    this.$http.get('http://127.0.0.1:5000/organizer/get_organizers')
+      .then(res => this.organizers_list = res.body);
+  },
   methods: {
+    categories() {
+      console.log(this.categories_list)
+    },
+    verificar() {
+      console.log(this.nuevoEvento.organizerId)
+    },
     async crear() {
       // Opciones por defecto estan marcadas con un *
       this.result = await fetch('http://127.0.0.1:5000/event/create_event', {

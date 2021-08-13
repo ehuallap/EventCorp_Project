@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <br><a href="#" class="btn btn-primary" @click="enviar" v-on:click="show = !show">Enviar Mensaje</a>
+                            <br><a href="" class="btn btn-primary" @click="enviar" v-on:click="show = !show">Enviar Mensaje</a>
                         </div>
                       <div>
                         <transition name="bounce">
