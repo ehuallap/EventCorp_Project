@@ -2,7 +2,7 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
-from flask import make_response
+from flask import render_template
 from flask_cors import CORS, cross_origin
 from flask import session
 
@@ -30,7 +30,9 @@ config = {
         'support_credentials=True'
     ],
 }
-app = Flask(__name__)
+app = Flask(__name__,
+            static_folder="./frontend/dist/static",
+            template_folder="./frontend/dist")
 
 app.register_blueprint(event_blueprint)
 app.register_blueprint(user_blueprint)
@@ -88,6 +90,12 @@ def authorize():
 
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def dender_vue(path):
+    return render_template("index.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

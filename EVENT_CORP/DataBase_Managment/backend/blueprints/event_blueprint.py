@@ -41,7 +41,7 @@ def get_event_organizer():
 
 
 @event_blueprint.route('/event/get_events', methods=['GET'])
-# @token_required
+@token_required
 @cross_origin()
 def get_events():
     return jsonify(model.get_events())

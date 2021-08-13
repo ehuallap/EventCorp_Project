@@ -43,9 +43,20 @@ export default {
       pos: 0
     }
   },
+
   created() {
-    this.$http.get('http://127.0.0.1:5000/event/get_events', '', {'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdGF0ZSI6IkhhIHNpZG8gYXV0b3JpemFkbyIsImV4cGlyYXRpb24iOiIyMDc2LTA1LTE1IDIyOjI0OjEzLjk3NjYwOCJ9.Cebe8VoflPVR4Co4kcvHa75VsTGh-GtmGKDVjCXBOhc'})
-    .then(res => this.eventos = res.body);
+    var axios = require('axios')
+    var config = {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdGF0ZSI6IkhhIHNpZG8gYXV0b3JpemFkbyIsImV4cGlyYXRpb24iOiIyMDc2LTA1LTE2IDE0OjQ2OjUxLjUxOTk4OSJ9.qQDo-MdQDlRgBMF-wCubqJOplW87rvRxNcqRuu4IxKg'
+      }
+    };
+    axios.get('http://127.0.0.1:5000/event/get_events', config)
+    .then(function (res){
+      console.log(res)
+    })
   },
   methods: {
   }
