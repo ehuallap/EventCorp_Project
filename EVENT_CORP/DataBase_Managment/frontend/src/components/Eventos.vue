@@ -37,7 +37,6 @@
 </template>
 
 <script>
-
 import HelloWorld from "./HelloWorld";
 export default {
   name: "Eventos",
@@ -51,8 +50,12 @@ export default {
     }
   },
   created() {
-    this.$http.post('http://127.0.0.1:5000/event/get_event', {'id': this.destinationId})
-    .then(res => this.evento = res.body);
+    var axios = require('axios')
+    axios.post('http://127.0.0.1:5000/event/get_event/',  {'id': this.destinationId})
+      .then(function(response){
+        console.log("HOLA")
+        this.evento = response.data;
+    });
   },
   methods: {
     pass() {
