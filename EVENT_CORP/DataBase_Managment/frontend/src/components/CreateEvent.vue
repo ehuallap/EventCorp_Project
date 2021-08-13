@@ -33,13 +33,13 @@
                     <div class="col-md-6">
                       <h2>Organizador:</h2>
                       <div class="form-group">
-                        <input type=text class="form-control" id="Organizer" placeholder="Organizador" v-model="nuevoEvento.organizerId">
+                        <input type=text class="form-control" id="Organizer" placeholder="Organizador" v-model="nuevoEvento.organizer_name">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <h2>Categoria:</h2>
                       <div class="form-group">
-                        <input type=text class="form-control" id="Category" placeholder="Categoria" v-model="nuevoEvento.categoryId">
+                        <input type=text class="form-control" id="Category" placeholder="Categoria" v-model="nuevoEvento.category_name">
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -94,8 +94,8 @@ export default {
           date_start: this.nuevoEvento['date_start'].toString(),
           date_end: this.nuevoEvento['date_end'].toString(),
           subscribers: this.nuevoEvento['subscribers'].toString(),
-          categoryId: this.nuevoEvento['category_name'].toString(),
-          organizerId: this.nuevoEvento['organizer_name'].toString()
+          category_name: this.nuevoEvento['category_name'].toString(),
+          organizer_name: this.nuevoEvento['organizer_name'].toString()
         })
       })
       const array = await this.result.json()
