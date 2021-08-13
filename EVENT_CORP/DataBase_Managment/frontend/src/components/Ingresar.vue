@@ -26,10 +26,10 @@
                                 <input type=password class="form-control" id="Contraseña" placeholder="Contraseña" v-model="usuarioNuevo.password">
                             </div>
                         </div>
-                        <div class="col-md-12 mt-5">
+                        <div class="col-md-6 mt-5">
                             <button type="button" class="btn btn-primary" @click="ingresarClient" v-on:click="show = !show">Ingresar como usuario</button>
                         </div>
-                        <div class="col-md-12 mt-5">
+                        <div class="col-md-6 mt-5">
                             <button type="button" class="btn btn-primary" @click="ingresarAdmin" v-on:click="show = !show">Ingresar como manager</button>
                         </div>
                         <div>
