@@ -18,18 +18,23 @@ CREATE TABLE IF NOT EXISTS Categories(
 );
 ALTER TABLE Categories AUTO_INCREMENT = 1;
 
+ALTER TABLE Organizers ADD INDEX(OrganizerName);
+ALTER TABLE Categories ADD INDEX(CategoryName);
+
 CREATE TABLE IF NOT EXISTS Events(
 	EventID INT AUTO_INCREMENT NOT NULL,
 	EventTitle VARCHAR(50) NOT NULL,
 	EventDescription TEXT,
-    EventDateTimeStart DATETIME,
-    EventDateTimeEnd DATETIME,
+   	EventDateTimeStart DATETIME,
+    	EventDateTimeEnd DATETIME,
 	EventSubscribers INT NOT NULL,
-    EventImage BLOB,
-    OrganizerID int,
-    FOREIGN KEY(OrganizerID) REFERENCES Organizers(OrganizerID),
-    CategoryID int,
-    FOREIGN KEY(CategoryID)REFERENCES Categories(CategoryID),
+    	EventImage BLOB,
+	CategoryName VARCHAR(500),
+    CONSTRAINT kfeventos_category
+    FOREIGN KEY(CategoryName)REFERENCES Categories(CategoryName),
+    OrganizerName VARCHAR(500),
+    CONSTRAINT kfeventos_organizer
+    FOREIGN KEY(OrganizerName) REFERENCES Organizers(OrganizerName),
 	PRIMARY KEY(EventID)
 );
 ALTER TABLE Events AUTO_INCREMENT = 1;
