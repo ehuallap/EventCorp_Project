@@ -5,6 +5,7 @@ from flask import jsonify
 from flask_cors import CORS, cross_origin
 #from app import token_required
 
+
 from ..models.task_events import TaskEvents
 
 event_blueprint = Blueprint('event_blueprint', __name__)

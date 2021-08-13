@@ -16,6 +16,7 @@ class TaskEvents:
         }
         query = """INSERT INTO Events (EventTitle, EventDescription, EventDateTimeStart, EventDateTimeEnd, EventSubscribers, CategoryName, OrganizerName) 
             values (%(title)s, %(description)s, %(date_start)s,%(date_end)s, %(subscribers)s, %(category_name)s, %(organizer_name)s)"""
+
         cursor = self.mysql_pool.execute(query, params, commit=True)
 
         data = {'ID': cursor.lastrowid, 'Title': title, 'Description': description,
