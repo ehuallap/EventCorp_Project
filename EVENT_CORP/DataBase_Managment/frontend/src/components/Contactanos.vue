@@ -16,30 +16,34 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type=text class="form-control" id="Nombre" placeholder="Nombre">
+                                <input type=text class="form-control" id="Nombre" placeholder="Nombre" v-model="consulta.name">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type=text class="form-control" id="Apellido" placeholder="Apellido">
+                                <input type=text class="form-control" id="Apellido" placeholder="Apellido" v-model="consulta.last_name">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <h2>Email:</h2>
                             <div class="form-group">
-                                <input type=text class="form-control" id="Email"
-                                    placeholder="Dirección de correo electrónico">
+                                <input type=text class="form-control" id="Email" placeholder="Dirección de correo electrónico" v-model="consulta.email">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <h2>Mensaje:</h2>
                             <div class="form-group">
-                                <input type=text class="form-control" id="Mensaje" placeholder="Hola! Que tal? . . . ">
+                                <input type=text class="form-control" id="Mensaje" placeholder="Hola! Que tal? . . . " v-model="consulta.message">
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <br><a href="#" class="btn btn-primary">Enviar Mensaje</a>
+                            <br><a href="#" class="btn btn-primary" @click="enviar" v-on:click="show = !show">Enviar Mensaje</a>
                         </div>
+                      <div>
+                        <transition name="bounce">
+                          <p v-if="show"> Llena todos los datos porfavor! </p>
+                        </transition>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -49,11 +53,51 @@
 
 <script>
 export default {
-  name: "Contactanos"
+  name: "Contactanos",
+  data() {
+    return {
+      consulta: {
+        name: '',
+        last_name: '',
+        email: '',
+        message: ''
+      },
+      show: false
+    }
+  },
+  methods: {
+    pass() {
+      this.show = !this.show
+    },
+    async enviar() {
+      if (this.consulta.name !== '' && this.consulta.last_name !== '' && this.consulta.email !== '' && this.consulta.message !== '') {
+        await this.$router.push("/crearevento")
+      } else {
+        setTimeout(this.pass,1500);
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
+  .bounce-enter-active {
+      animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+      animation: bounce-in .5s reverse;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 .container{
     padding: 20px;
 }

@@ -30,7 +30,7 @@
                             <button type="button" class="btn btn-primary" @click="ingresar" v-on:click="show = !show">Ingresar</button>
                         </div>
                         <div>
-                          <transition name="bounce">
+                         <transition name="bounce">
                             <p v-if="show"> Contraseña o Usuario Incorrecto </p>
                           </transition>
                         </div>
