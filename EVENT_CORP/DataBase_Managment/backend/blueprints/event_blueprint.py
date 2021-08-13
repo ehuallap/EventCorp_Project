@@ -3,7 +3,6 @@ from flask import Blueprint
 from flask import request
 from flask import jsonify
 from flask_cors import CORS, cross_origin
-#from app import token_required
 
 
 from ..models.task_events import TaskEvents
@@ -40,9 +39,9 @@ def get_event_category():
 def get_event_organizer():
     return jsonify(model.get_event_organizer(request.json['OrganizerName']))
 
-
+from app import token_required
 @event_blueprint.route('/event/get_events', methods=['GET'])
-#@token_required
+# @token_required
 @cross_origin()
 def get_events():
     return jsonify(model.get_events())

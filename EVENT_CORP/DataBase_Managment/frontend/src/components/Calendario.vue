@@ -45,7 +45,7 @@ export default {
   },
   created() {
     this.$http.get('http://127.0.0.1:5000/event/get_events')
-    .then(res => this.eventos = res.body);
+      .then(res => this.eventos = res.body);
   },
   methods: {
   }
