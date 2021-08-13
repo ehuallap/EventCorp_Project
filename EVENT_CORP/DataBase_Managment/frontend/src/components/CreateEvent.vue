@@ -34,32 +34,22 @@
                       <h2>Organizador:</h2>
 
                       <div class="form-group">
-<<<<<<< HEAD
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Organizadores</option>
-                          <option v-for="item in organizers_list" :key="item.id" value="${item.Name}" v-model="nuevoEvento.organizerId"> {{item.Name}} </option>
+                        <select class="form-select" aria-label="Default select example" v-model="nuevoEvento.organizer_name">
+                          <option v-for="item in organizers_list" :key="item.id" :value="item.Name"> {{item.Name}} </option>
                         </select>
-=======
-                        <input type=text class="form-control" id="Organizer" placeholder="Organizador" v-model="nuevoEvento.organizer_name">
->>>>>>> 63bb9f14b46bf86775793a4ba57ece5262b78133
                       </div>
 
                     </div>
                     <div class="col-md-6">
                       <h2>Categoria:</h2>
                       <div class="form-group">
-<<<<<<< HEAD
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Categorías</option>
-                          <option v-for="item in categories_list" :key="item.id" value="${item.Name}" v-model="nuevoEvento.categoryId"> {{item.Name}} </option>
+                        <select class="form-select" aria-label="Default select example" v-model="nuevoEvento.category_name">
+                          <option v-for="item in categories_list" :key="item.id" :value="item.Name"> {{item.Name}} </option>
                         </select>
-=======
-                        <input type=text class="form-control" id="Category" placeholder="Categoria" v-model="nuevoEvento.category_name">
->>>>>>> 63bb9f14b46bf86775793a4ba57ece5262b78133
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <br><a href="#" class="btn btn-primary" @click="crear">Crear</a>
+                      <br><a class="btn btn-primary" @click="crear">Crear</a>
                     </div>
                   </div>
                 </div>
@@ -103,7 +93,7 @@ export default {
       console.log(this.categories_list)
     },
     verificar() {
-      console.log(this.nuevoEvento.organizerId)
+      console.log(this.nuevoEvento.organizer_name)
     },
     async crear() {
       // Opciones por defecto estan marcadas con un *
@@ -132,6 +122,8 @@ export default {
       console.log(array)
       if ( array ) {
         await this.$router.push("/calendario")
+      } else {
+        console.log("No redirecciona")
       }
     }
   }
