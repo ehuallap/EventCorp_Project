@@ -3,7 +3,7 @@ from flask import Blueprint
 from flask import request
 from flask import jsonify
 from flask_cors import CORS, cross_origin
-from app import token_required
+# from app import token_required
 
 from ..models.task_events import TaskEvents
 

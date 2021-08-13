@@ -50,8 +50,7 @@ export default {
     }
   },
   created() {
-    var axios = require('axios')
-    axios.post('http://127.0.0.1:5000/event/get_event/',  {'id': this.destinationId})
+    this.$http.post('http://127.0.0.1:5000/event/get_event/',  {'id': this.destinationId})
       .then(function(response){
         console.log("HOLA")
         this.evento = response.data;

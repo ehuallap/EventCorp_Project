@@ -12,10 +12,10 @@ class TaskEvents:
             'date_end': date_end,
             'subscribers': subscribers,
             'categoryId': categoryId,
-            'OrganizerId': organizerId
+            'organizerId': organizerId
         }
-        query = """INSERT INTO Events (EventTitle, EventDescription, EventDateTimeStart, EventDateTimeEnd, EventSubscribers, CategoryID, OrganizerID) 
-            values (%(title)s, %(description)s, %(date_start)s,%(date_end)s, %(subscribers)s, %(categoryID)s, %(organizerID)s)"""
+        query = """INSERT INTO Events (EventTitle, EventDescription, EventDateTimeStart, EventDateTimeEnd, EventSubscribers, OrganizerID, CategoryID) 
+            values (%(title)s, %(description)s, %(date_start)s,%(date_end)s, %(subscribers)s, %(organizerId)s, %(categoryId)s)"""
         cursor = self.mysql_pool.execute(query, params, commit=True)
 
         data = {'ID': cursor.lastrowid, 'Title': title, 'Description': description,
