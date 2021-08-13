@@ -1,67 +1,31 @@
 <template>
-  <div class="content-center">
-    <section id="Calendario">
-        <div class="container">
-            <div class="content-center">
-                <h1>Calendario</h1>
-                <h3>Próximos eventos</h3>
-            </div>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="../assets/evento.jpg" class="d-block w-100" alt="...">
+        <section id="Calendario">
+            <div class="container">
+                <div class="content-center">
+                    <h1>Calendario</h1>
+                    <h3>Próximos eventos</h3>
                 </div>
-                <div class="carousel-item">
-                  <img src="../assets/evento2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/evento3.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/evento4.jpg" class="d-block w-100" alt="...">
+              <div v-for="item in eventos" :key="item.id">
+                <div class="container-white">
+                  <div class="row">
+                    <div class="col-md-2 mt-3 ml-4">
+                        <img src="../assets/ComoFunciona.png" style = "min-width: 10px; max-width:120px;" alt="ImgReferencial">
+                    </div>
+                    <div class="col-md-6 mt-3 ml-4">
+                        <h2>{{item.Title}}</h2>
+                        <p>{{item.Description}}</p>
+                    </div>
+                    <div class="col-md-1 mt-3 ml-4">
+                    </div>
+                    <div class="col-md-2 justify-content-center mt-auto mb-auto">
+                        <a class="btn btn-primary" :href="'/eventos/'+ item.ID" id="INFO">Más información</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
-            <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">ID del Evento</th>
-                <th scope="col">Titulo</th>
-                <th scope="col">Descripción del evento</th>
-                <th scope="col">Fecha de inicio</th>
-                <th scope="col">Fecha de culminación</th>
-                <th scope="col">Suscriptores</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="item in eventos" :key="item.id">
-                <th scope="row">{{item.ID}}</th>
-                <td>{{item.Title}}</td>
-                <td>{{item.Description}}</td>
-                <td>{{item.Starts}}</td>
-                <td>{{item.Ends}}</td>
-                <td>{{item.Subscribers}}</td>
-              </tr>
-            </tbody>
-            </table>
-        </div>
-      <container-ins/>
-    </section>
-  </div>
+            <container-ins />
+        </section>
 </template>
 
 <script>

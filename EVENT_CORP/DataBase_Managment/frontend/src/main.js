@@ -24,6 +24,7 @@ import Contactanos from "./components/Contactanos";
 import Ingresar from "./components/Ingresar";
 import Eventos from "./components/Eventos";
 import Inscribirse from "./components/Inscribirse";
+import CreateEvent from "./components/CreateEvent";
 
 const router = new VueRouter({
   mode: 'history',
@@ -59,12 +60,16 @@ const router = new VueRouter({
       component: SobreNosotros
     },
     {
-      path: '/eventos',
+      path: '/eventos/:id',
       component: Eventos
     },
     {
       path: '/inscribirse',
       component: Inscribirse
+    },
+    {
+      path: '/crearevento',
+      component: CreateEvent
     }
   ]
 });
