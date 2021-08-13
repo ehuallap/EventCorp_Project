@@ -60,7 +60,7 @@ const router = new VueRouter({
       component: SobreNosotros
     },
     {
-      path: '/eventos/:id',
+      path: '/evento/:id',
       component: Eventos
     },
     {

@@ -14,10 +14,10 @@
           </div>
           <div class="col-md-6">
             <div class="container">
-              <h2>Fecha y hora: </h2><h6>{{item.Starts}} - {{item.Ends}}</h6>
+              <h2>Fecha y hora: </h2><time>{{item.Starts}} - {{item.Ends}}</time>
               <h2>Descripción: </h2><h4>{{item.Description}}</h4>
-              <h2>Organizador: </h2><h4>{{item.OrganizerId}}</h4>
-              <h2>Categoria: </h2><h4>{{item.CategoryId}}</h4>
+              <h2>Organizador: </h2><h4>{{item.OrganizerName}}</h4>
+              <h2>Categoria: </h2><h4>{{item.CategoryName}}</h4>
               <h2>Personas subscritas: </h2><h4>{{item.Subscribers}}</h4>
               <button class="mybtn" type="button">
                 <ion-icon name="calendar-outline"></ion-icon>
@@ -37,13 +37,11 @@
 </template>
 
 <script>
-import HelloWorld from "./HelloWorld";
+import axios  from 'axios'
 export default {
   name: "Eventos",
-  components: {HelloWorld},
   data(){
     return {
-      showEvent: false,
       destinationId: this.$route.params.id,
       evento: [],
       pos: 0

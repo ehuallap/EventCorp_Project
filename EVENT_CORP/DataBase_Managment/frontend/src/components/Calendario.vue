@@ -18,7 +18,7 @@
                     <div class="col-md-1 mt-3 ml-4">
                     </div>
                     <div class="col-md-2 justify-content-center mt-auto mb-auto">
-                        <a class="btn btn-primary" :href="'/eventos/'+ item.ID" id="INFO">Más información</a>
+                        <a class="btn btn-primary" :href="'/evento/'+ item.ID" id="INFO">Más información</a>
                     </div>
                   </div>
                 </div>
@@ -43,10 +43,9 @@ export default {
       pos: 0
     }
   },
-
   created() {
     this.$http.get('http://127.0.0.1:5000/event/get_events')
-    .then(res => this.eventos = res.data);
+    .then(res => this.eventos = res.body);
   },
   methods: {
   }
