@@ -51,10 +51,13 @@ Codigo Backend: [Backend](https://github.com/ehuallap/EventCorp_Project/tree/mai
 Codigo Frontend: [Frontend](https://github.com/ehuallap/EventCorp_Project/tree/main/EVENT_CORP/DataBase_Managment/frontend)
 
 ### 4.3. Tablas de la Base de Tados
-	* Clients: Administra los datos de los clientes.
-	* Clients_Routines: Toma los id de Clients y Routines para almacenarlos.
-	* Routines: Administra los datos que puede tener una rutina.
-[Base de Datos](https://github.com/ehuallap/PROYECTOFINAL_2A_DESARROLLO/tree/main/backend/mysql_scripts)
+	* Events
+	* Organizers
+	* Categories
+	* Users_Events
+	* Users
+	* Managers
+[Base de Datos](https://github.com/ehuallap/EventCorp_Project/tree/main/EVENT_CORP/EventCorp_ScriptsMySQL)
 
 ## Manual de Usuario
 ### Funcionamiento
