@@ -23,7 +23,9 @@ from backend.security.manager_blueprint import manager_blueprint
 from backend.security.user_blueprint import verify_user_blueprint
 from backend.models.task_users import TaskUsers
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_folder="./frontend/dist/static",
+            template_folder="./frontend/dist")
 
 app.register_blueprint(event_blueprint)
 app.register_blueprint(user_blueprint)
@@ -111,6 +113,12 @@ def authorize_client():
 
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def dender_vue(path):
+    return render_template("index.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

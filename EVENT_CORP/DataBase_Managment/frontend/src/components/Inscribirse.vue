@@ -41,7 +41,12 @@
               </div>
             </div>
             <div class="col-md-12 mt-3">
-              <button type="button" class="btn btn-primary" @click="crear">Registrarse</button>
+              <button type="button" class="btn btn-primary" @click="crear" v-on:click="show = !show">Registrarse</button>
+            </div>
+            <div>
+              <transition name="bounce">
+                <p v-if="show"> Completa todos los campos por favor! </p>
+              </transition>
             </div>
           </div>
         </div>
@@ -62,35 +67,43 @@ export default {
         'events_joined': 0,
         'password': ''
       },
-      result: ''
+      result: '',
+      show: false
     }
   },
   methods: {
+    pass() {
+      this.show = !this.show
+    },
     async crear() {
-      // Opciones por defecto estan marcadas con un *
-      this.result = await fetch('http://127.0.0.1:5000/user/create_user', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify({
-          last_name: this.nuevoUsuario['last_name'].toString(),
-          first_name: this.nuevoUsuario['first_name'].toString(),
-          email: this.nuevoUsuario['email'].toString(),
-          events_joined: this.nuevoUsuario['events_joined'].toString(),
-          password: this.nuevoUsuario['password'].toString()
+      if (this.nuevoUsuario.first_name !== '' && this.nuevoUsuario.last_name !== '' && this.nuevoUsuario.email !== '' && this.nuevoUsuario.password !== '') {
+        // Opciones por defecto estan marcadas con un *
+        this.result = await fetch('http://127.0.0.1:5000/user/create_user', {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, *cors, same-origin
+          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: 'same-origin', // include, *same-origin, omit
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json'
+          },
+          redirect: 'follow', // manual, *follow, error
+          referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify({
+            last_name: this.nuevoUsuario['last_name'].toString(),
+            first_name: this.nuevoUsuario['first_name'].toString(),
+            email: this.nuevoUsuario['email'].toString(),
+            events_joined: this.nuevoUsuario['events_joined'].toString(),
+            password: this.nuevoUsuario['password'].toString()
+          })
         })
-      })
-      const array = await this.result.json()
-      console.log(array)
-      if (array) {
-        await this.$router.push("/ingresar")
+        const array = await this.result.json()
+        console.log(array)
+        if (array) {
+          await this.$router.push("/ingresar")
+        }
+      } else {
+        setTimeout(this.pass,1500);
       }
     }
   }
@@ -98,7 +111,23 @@ export default {
 </script>
 
 <style scoped>
-
+    .bounce-enter-active {
+      animation: bounce-in .5s;
+    }
+    .bounce-leave-active {
+      animation: bounce-in .5s reverse;
+    }
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
 .col-md-12 {
   text-align: left;
 }
