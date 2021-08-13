@@ -2,37 +2,37 @@
 <section id="Evento">
   <div class="container">
     <div v-for="item in evento" :key="item.id">
-    <h1>{{item.Title}}</h1>
-    <div class="container-white">
-      <div class="row">
-        <div class="col-md-5 col align-self-center">
-          <div class="content-center">
-            <div v-if="item.Img==null">
-              <img src="../assets/ComoFunciona.png" style = "min-width: 10px; max-width:350px;" alt="Logo">
+      <h1>{{item.Title}}</h1>
+      <div class="container-white">
+        <div class="row">
+          <div class="col-md-5 col align-self-center">
+            <div class="content-center">
+              <div v-if="item.Img==null">
+                <img src="../assets/ComoFunciona.png" style = "min-width: 10px; max-width:350px;" alt="Logo">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="container">
+              <h2>Fecha y hora: </h2><h6>{{item.Starts}} - {{item.Ends}}</h6>
+              <h2>Descripción: </h2><h4>{{item.Description}}</h4>
+              <h2>Organizador: </h2><h4>{{item.OrganizerId}}</h4>
+              <h2>Categoria: </h2><h4>{{item.CategoryId}}</h4>
+              <h2>Personas subscritas: </h2><h4>{{item.Subscribers}}</h4>
+              <button class="mybtn" type="button">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </button>
+              <h5>Agregar a mi calendario</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="container">
-            <h2>Fecha y hora: </h2><h6>{{item.Starts}} - {{item.Ends}}</h6>
-            <h2>Descripción: </h2><h4>{{item.Description}}</h4>
-            <h2>Organizador: </h2><h4>{{item.OrganizerId}}</h4>
-            <h2>Categoria: </h2><h4>{{item.CategoryId}}</h4>
-            <h2>Personas subscritas: </h2><h4>{{item.Subscribers}}</h4>
-            <button class="mybtn" type="button">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </button>
-            <h5>Agregar a mi calendario</h5>
-          </div>
-        </div>
       </div>
+      <a class="mybtn mt-4" type="button" href="/calendario">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </a>
+      <h2>Regresar al Calendario</h2>
     </div>
-    <a class="mybtn mt-4" type="button" href="/calendario">
-      <ion-icon name="arrow-back-circle-outline"></ion-icon>
-    </a>
-    <h2>Regresar al Calendario</h2>
   </div>
-    </div>
 </section>
 </template>
 
@@ -44,16 +44,20 @@ export default {
   components: {HelloWorld},
   data(){
     return {
+      showEvent: false,
       destinationId: this.$route.params.id,
       evento: [],
       pos: 0
     }
   },
   created() {
-    this.$http.get('http://127.0.0.1:5000/event/get_event/' + this.destinationId , '', {'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdGF0ZSI6IkhhIHNpZG8gYXV0b3JpemFkbyIsImV4cGlyYXRpb24iOiIyMDc2LTA1LTE1IDIyOjI0OjEzLjk3NjYwOCJ9.Cebe8VoflPVR4Co4kcvHa75VsTGh-GtmGKDVjCXBOhc'})
+    this.$http.post('http://127.0.0.1:5000/event/get_event', {'id': this.destinationId})
     .then(res => this.evento = res.body);
   },
   methods: {
+    pass() {
+      this.showEvent = !this.showEvent
+    },
   }
 }
 </script>
