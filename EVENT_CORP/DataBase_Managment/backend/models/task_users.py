@@ -4,18 +4,19 @@ class TaskUsers:
     def __init__(self):
         self.mysql_pool = MySQLPool()
 
-    def create_user(self, last_name, name, email, events_joined):
+    def create_user(self, last_name, first_name, email, events_joined, password):
         params = {
             'last_name': last_name,
-            'name': name,
+            'first_name': first_name,
             'email': email,
-            'events_joined': events_joined
+            'events_joined': events_joined,
+            'password': password
         }
-        query = """ INSERT INTO users (UserLastName, UserName, UserEmail, UserEventsJoined)
-            VALUES (%(last_name)s, %(name)s, %(email)s, %(events_joined)s)"""
+        query = """ INSERT INTO users (UserLastName, UserFirstName, UserEmail, UserEventsJoined, UserPassword)
+            VALUES (%(last_name)s, %(first_name)s, %(email)s, %(events_joined)s, %(password)s)"""
         cursor = self.mysql_pool.execute(query, params, commit=True)
-        data = {'ID': cursor.lastrowid, 'LastName': last_name, 'Name': name,
-                'Email': email, 'Events Joined': events_joined}
+        data = {'ID': cursor.lastrowid, 'LastName': last_name, 'FirstName': first_name,
+                'Email': email, 'Events Joined': events_joined, 'Password': password}
         return data
 
     def get_user(self, id):

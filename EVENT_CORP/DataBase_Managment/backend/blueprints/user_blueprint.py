@@ -12,8 +12,9 @@ model = TaskUsers()
 @user_blueprint.route('/user/create_user', methods=['POST'])
 @cross_origin()
 def create_user():
-    content = model.create_user(request.json['last_name'], request.json['name'],
-                                request.json['email'], request.json['events_joined'])
+    content = model.create_user(request.json['last_name'], request.json['first_name'],
+                                request.json['email'], request.json['events_joined'],
+                                request.json['password'])
     return jsonify(content)
 
 @user_blueprint.route('/user/get_user', methods=['POST'])

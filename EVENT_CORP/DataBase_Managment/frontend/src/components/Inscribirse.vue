@@ -19,29 +19,29 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input type=text class="form-control" id="Nombre" placeholder="Nombre">
+                <input type=text class="form-control" id="Nombre" placeholder="Nombre" v-model="nuevoUsuario.first_name">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input type=text class="form-control" id="Apellido" placeholder="Apellido">
+                <input type=text class="form-control" id="Apellido" placeholder="Apellido" v-model="nuevoUsuario.last_name">
               </div>
             </div>
             <div class="col-md-12">
               <h2>Email:</h2>
               <div class="form-group">
                 <input type=text class="form-control" id="Email"
-                       placeholder="Dirección de correo electrónico">
+                       placeholder="Dirección de correo electrónico" v-model="nuevoUsuario.email">
               </div>
             </div>
             <div class="col-md-12">
               <h2>Contraseña:</h2>
               <div class="form-group">
-                <input type=password class="form-control" id="Contraseña" placeholder="Contraseña">
+                <input type=password class="form-control" id="Contraseña" placeholder="Contraseña" v-model="nuevoUsuario.password">
               </div>
             </div>
             <div class="col-md-12 mt-3">
-              <button type="button" class="btn btn-primary">Registrarse</button>
+              <button type="button" class="btn btn-primary" @click="crear">Registrarse</button>
             </div>
           </div>
         </div>
@@ -52,7 +52,48 @@
 
 <script>
 export default {
-  name: "Inscribirse"
+  name: "Inscribirse",
+  data() {
+    return {
+      nuevoUsuario: {
+        'last_name': '',
+        'first_name': '',
+        'email': '',
+        'events_joined': 0,
+        'password': ''
+      },
+      result: ''
+    }
+  },
+  methods: {
+    async crear() {
+      // Opciones por defecto estan marcadas con un *
+      this.result = await fetch('http://127.0.0.1:5000/user/create_user', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({
+          last_name: this.nuevoUsuario['last_name'].toString(),
+          first_name: this.nuevoUsuario['first_name'].toString(),
+          email: this.nuevoUsuario['email'].toString(),
+          events_joined: this.nuevoUsuario['events_joined'].toString(),
+          password: this.nuevoUsuario['password'].toString()
+        })
+      })
+      const array = await this.result.json()
+      console.log(array)
+      if (array) {
+        await this.$router.push("/ingresar")
+      }
+    }
+  }
 }
 </script>
 

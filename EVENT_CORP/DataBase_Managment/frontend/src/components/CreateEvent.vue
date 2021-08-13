@@ -34,20 +34,28 @@
                       <h2>Organizador:</h2>
 
                       <div class="form-group">
+<<<<<<< HEAD
                         <select class="form-select" aria-label="Default select example">
                           <option selected>Organizadores</option>
                           <option v-for="item in organizers_list" :key="item.id" value="${item.Name}" v-model="nuevoEvento.organizerId"> {{item.Name}} </option>
                         </select>
+=======
+                        <input type=text class="form-control" id="Organizer" placeholder="Organizador" v-model="nuevoEvento.organizer_name">
+>>>>>>> 63bb9f14b46bf86775793a4ba57ece5262b78133
                       </div>
 
                     </div>
                     <div class="col-md-6">
                       <h2>Categoria:</h2>
                       <div class="form-group">
+<<<<<<< HEAD
                         <select class="form-select" aria-label="Default select example">
                           <option selected>Categorías</option>
                           <option v-for="item in categories_list" :key="item.id" value="${item.Name}" v-model="nuevoEvento.categoryId"> {{item.Name}} </option>
                         </select>
+=======
+                        <input type=text class="form-control" id="Category" placeholder="Categoria" v-model="nuevoEvento.category_name">
+>>>>>>> 63bb9f14b46bf86775793a4ba57ece5262b78133
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -76,8 +84,8 @@ export default {
         'date_start': '',
         'date_end': '',
         'subscribers': '0',
-        'categoryId': '',
-        'organizerId': ''
+	      'category_name': '',
+	      'organizer_name': ''
       },
       result: '',
       categories_list: '',
@@ -116,8 +124,8 @@ export default {
           date_start: this.nuevoEvento['date_start'].toString(),
           date_end: this.nuevoEvento['date_end'].toString(),
           subscribers: this.nuevoEvento['subscribers'].toString(),
-          categoryId: this.nuevoEvento['categoryId'].toString(),
-          organizerId: this.nuevoEvento['organizerId'].toString()
+          category_name: this.nuevoEvento['category_name'].toString(),
+          organizer_name: this.nuevoEvento['organizer_name'].toString()
         })
       })
       const array = await this.result.json()
