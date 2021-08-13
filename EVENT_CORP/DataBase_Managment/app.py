@@ -20,6 +20,7 @@ from backend.blueprints.user_blueprint import user_blueprint
 from backend.blueprints.organizer_blueprint import organizer_blueprint
 from backend.blueprints.category_blueprint import category_blueprint
 from backend.security.manager_blueprint import manager_blueprint
+from backend.security.user_blueprint import verify_user_blueprint
 from backend.models.task_users import TaskUsers
 
 app = Flask(__name__)
@@ -29,6 +30,7 @@ app.register_blueprint(user_blueprint)
 app.register_blueprint(organizer_blueprint)
 app.register_blueprint(category_blueprint)
 app.register_blueprint(manager_blueprint)
+app.register_blueprint(verify_user_blueprint)
 
 model = TaskUsers()
 
@@ -59,6 +61,35 @@ def authorize():
         'password': credential
     }
     resp = requests.post('http://127.0.0.1:5000/manager/verify', json=auth_data)
+    credential = resp.json()
+
+    if credential[0]['Auth'] == 'Ha sido autorizado':
+        session['authorized'] = True
+        token = jwt.encode({
+            'state': credential[0]['Auth'],
+            'expiration': str(datetime.utcnow() + timedelta(20000))
+        },
+            app.config['SECRET_KEY'])
+        return jsonify({
+            'code': 'A',
+            'token': token
+        })
+    else:
+        return jsonify({
+            'code': 'U',
+            'token': ''
+        })
+
+@app.route('/authorize_client', methods=['POST'])
+@cross_origin()
+def authorize_client():
+    credential = request.json['password']
+    user = request.json['user']
+    auth_data = {
+        'user': user,
+        'password': credential
+    }
+    resp = requests.post('http://127.0.0.1:5000/user/verify', json=auth_data)
     credential = resp.json()
 
     if credential[0]['Auth'] == 'Ha sido autorizado':
